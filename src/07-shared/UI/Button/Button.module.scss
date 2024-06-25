@@ -1,0 +1,16 @@
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family-medium);
+    color: var(--color-light);
+    background-color: var(--color-green);
+    border-radius: 6px;
+    border: none;
+    
+    &:active{}
+    &:hover{
+        
+    }
+    
+}

@@ -1,0 +1,37 @@
+.button {
+    width: 100px;
+    height: 35px;
+    margin-left: 35px;
+}
+.header {
+    margin-top: 25px;
+    height: 55px;
+    width: 100%;
+    max-width: 1200px;
+    border-bottom: var(--border-bottom);
+    &__inner {
+        
+        height: 55px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__right-menu {
+        display: flex;
+    }
+}
+.logo {
+    width: 130px;
+    height: 35px;
+    color: var(--color-green);
+}
+.icon {
+    margin-top: 5px;
+    width: 24px;
+    height: 24px;
+}
+.icon:first-child {
+    margin-top: 8px;
+    margin-right: 30px;
+    width: 20px;
+    height: 20px;
+}

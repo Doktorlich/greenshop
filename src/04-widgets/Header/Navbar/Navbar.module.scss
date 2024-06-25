@@ -1,0 +1,28 @@
+.nav {
+    color: var(--color-dark);
+    font-family: var(--font-family-regular);
+    &__menu-list {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        column-gap: 50px;
+        list-style: none;
+    }
+    &__menu-item {
+        cursor: pointer;
+
+        &--active {
+            font-weight: 700;
+            border-bottom: 2px solid var(--color-green);
+        }
+        &:hover {
+            border-bottom: 2px solid var(--color-green);
+        }
+    }
+
+    &__menu-link {
+        display: block;
+        margin-top: 7px;
+        height: 49px;
+    }
+}

@@ -5,6 +5,7 @@
 :root {
     // переменная для цвета
     --color-green: #46a358;
+    --color-green-opc50: #46a35980;
     --color-dark: #3d3d3d;
     --color-light: #ffffff;
     --color-light-alt: #fbfbfb;
@@ -12,7 +13,7 @@
 
     // переменные для рамок
 
-    --border-bottom: 0.3px solid var(--color-green);
+    --border-bottom: 1px solid var(--color-green-opc50);
 
     // переменные для цвета
     // --shadow: 0 5px 0 0 var(--color-black);
