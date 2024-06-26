@@ -1,0 +1,54 @@
+.subscribe {
+    box-sizing: border-box !important;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+
+    width: 354px;
+    &__title {
+        font-family: var(--font-family-bold);
+        font-size: 18px;
+        line-height: 16px;
+        color: var(--color-dark);
+    }
+    &__description {
+        color: var(--color-gray-dark);
+        font-size: 13px;
+        line-height: 22px;
+        text-align: justify;
+    }
+    &-form {
+        &__email,
+        &__submit {
+            height: 40px;
+            border: none;
+        }
+        &__email {
+            position: relative;
+            width: 269px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border: 1px solid #ffffff00;
+            &::placeholder {
+                color: var(--color-gray-medium);
+            }
+            &:active,
+            &:focus {
+                outline: transparent;
+
+                border-bottom: 1px solid var(--color-green);
+                bottom: 0;
+            }
+        }
+        &__submit {
+            font-family: var(--font-family-bold);
+            background-color: var(--color-green);
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            color: var(--color-light);
+            width: 85px;
+            &:active {
+            }
+        }
+    }
+}

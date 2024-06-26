@@ -1,0 +1,15 @@
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 65px;
+    background-color: var(--color-gray-light);
+
+    padding: 25px;
+}
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 65px;
+}
+// 343
+// 269+85
