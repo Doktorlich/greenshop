@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 const LogoIcon = ({ className }) => {
     return (
         <svg className={className} width="150.004089" height="34.299927" viewBox="0 0 150.004 34.2999" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -78,5 +78,7 @@ const LogoIcon = ({ className }) => {
         </svg>
     );
 };
-
+LogoIcon.propTypes = {
+    className: PropTypes.string,
+};
 export default LogoIcon;

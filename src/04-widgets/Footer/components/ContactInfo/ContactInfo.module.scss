@@ -1,0 +1,26 @@
+.menu__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-decoration: none;
+
+    padding-top: 25px;
+
+    padding-bottom: 20px;
+    padding-left: 25px;
+    background-color: var(--color-green-opc10);
+}
+.logo {
+    color: var(--color-green);
+    height: 35px;
+    width: 150px;
+}
+.menu__item {
+    display: flex;
+}
+.menu__image {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+}
+.menu__link {
+}
