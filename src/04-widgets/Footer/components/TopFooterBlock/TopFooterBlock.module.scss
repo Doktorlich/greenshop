@@ -13,3 +13,20 @@
 }
 // 343
 // 269+85
+@media (max-width: 1450px) {
+    .services {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 50px;
+    }
+}
+@media (max-width: 1040px) {
+    .menu-list {
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-green-opc50) var(--color-light);
+     
+    }
+}
+@media (max-width: 758px) {
+}

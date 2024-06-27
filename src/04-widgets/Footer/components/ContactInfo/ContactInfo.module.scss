@@ -24,3 +24,18 @@
 }
 .menu__link {
 }
+@media (max-width: 1220px) {
+    .menu__list {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 25px;
+    }
+}
+@media (max-width: 758px) {
+    .menu__list {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 25px;
+    }
+}
+
+
+
