@@ -1,6 +1,7 @@
 .categories {
+    margin-bottom: 32px;
     &__main-title {
-        font-family: var(--font-family-black);
+        font-family: var(--font-family-bold);
         font-size: 18px;
 
         margin: 0;
@@ -18,8 +19,6 @@
             justify-content: space-between;
             align-items: center;
 
-            height: 40px;
-
             line-height: 40px;
             font-size: 15px;
             //categories__list-item--active
@@ -33,6 +32,7 @@
         }
         &-title {
             margin: 0;
+            width: 200px;
         }
         &-count {
             margin: 0;

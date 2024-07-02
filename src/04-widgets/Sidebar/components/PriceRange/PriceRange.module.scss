@@ -1,0 +1,29 @@
+.price-range {
+    width: 226px;
+    margin-bottom: 46px;
+    &__title {
+        font-family: var(--font-family-bold);
+        font-size: 18px;
+
+       margin-bottom: 46px;
+    }
+    &__scale{
+        margin-bottom: 19px;
+    }
+    &__counter {
+        margin-left: 12px;
+       
+        &-name {
+            margin-bottom: 16px;
+        }
+        &-number {
+            font-family: var(--font-family-bold);
+            color: var(--color-green);
+        }
+    }
+}
+.button {
+   
+    margin-left: 12px;
+    padding: 8px 25px 7px 26px;
+}
