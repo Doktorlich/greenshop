@@ -1,50 +1,67 @@
 // размещаем директиву шрифтов
 
+// @font-face {
+//     font-family: "Proxima Nova";
+//     src: url("./fonts/ProximaNova-Black.eot");
+//     src: local("./fonts/Proxima Nova Black"), local("ProximaNova-Black"), url("./fonts/ProximaNova-Black.eot?#iefix") format("embedded-opentype"), url("./fonts/ProximaNova-Black.woff") format("woff"),
+//         url("./fonts/ProximaNova-Black.ttf") format("truetype");
+//     font-weight: 900;
+//     font-style: normal;
+// }
+
 @font-face {
-    font-family: "CeraPro-Black";
-    src: url("../../../assets/font/CeraPro-Black.woff2") format("woff2");
+    font-family: "CeraProBlack";
+    src: url("../../../07-shared/assets/font/CeraPro-Black.woff2") format("woff2");
+    src: local("../../../07-shared/assets/font/CeraPro-Black.woff2"), local("CeraPro-Black");
+
     font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro-Bold";
-    src: url("../../../assets/font/CeraPro-Bold.woff2") format("woff2");
+    font-family: "CeraProBold";
+    src: url("../../../07-shared/assets/font/CeraPro-Bold.woff2") format("woff2");
+    src: local("../../../07-shared/assets/font/CeraPro-Bold.woff2"), local("CeraPro-Bold");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro-Light";
-    src: url("../../../assets/font/CeraPro-Light.woff2") format("woff2");
+    font-family: "CeraProLight";
+    src: url("../../../07-shared/assets/font/CeraPro-Light.woff2") format("woff2");
+    src: local("../../../07-shared/assets/font/CeraPro-Light.woff2"), local("CeraPro-Light");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro-Medium";
-    src: url("../../../assets/font/CeraPro-Medium.woff2") format("woff2");
+    font-family: "CeraProMedium";
+    src: url("../../../07-shared/assets/font/CeraPro-Medium.woff2") format("woff2");
+    src: local("../../../07-shared/assets/font/CeraPro-Medium.woff2"), local("CeraPro-Medium");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro-Regular";
-    src: url("../../../assets/font/CeraPro-Regular.woff2") format("woff2");
+    font-family: "CeraProRegular";
+    src: url("../../../07-shared/assets/font/CeraPro-Regular.woff2") format("woff2");
+    src: local("../../../07-shared/assets/font/CeraPro-Regular.woff2"), local("CeraPro-Regular");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro-Thin";
-    src: url("../../../assets/font/CeraPro-Thin.woff2") format("woff2");
+    font-family: "CeraProThin";
+    src: url("../../../07-shared/assets/font/CeraPro-Thin.woff2") format("woff2");
+    src: local("../../../07-shared/assets/font/CeraPro-Thin.woff2"), local("CeraPro-Thin");
     font-weight: 100;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "Hanging Letters";
-    src: url("../../../assets/font/HangingLetters.woff2") format("woff2");
+    src: url("../../../07-shared/assets/font/HangingLetters.woff2") format("woff2");
+    src: local("../../../07-shared/assets/font/HangingLetters.woff2"), local("HangingLetters");
     font-weight: 400;
     font-display: swap;
 }

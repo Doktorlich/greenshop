@@ -1,0 +1,39 @@
+@mixin visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+.main-title {
+    @include visually-hidden;
+}
+
+.slider {
+    width: 1200px;
+    &__left-container {
+        width: 530px;
+    }
+    &__subtitle {
+    }
+    &__button {
+        width: 140px;
+        height: 40px;
+    }
+    &__title {
+    }
+    &__description {
+    }
+    &__image-container {
+    }
+    &__image-big {
+    }
+    &__image-small {
+    }
+}
