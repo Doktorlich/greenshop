@@ -5,7 +5,7 @@ import styled from "./Header.module.scss";
 //icons
 
 //components
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Button from "../../07-shared/UI/Button/Button";
 import CartIcon from "../../07-shared/UI/Icon/CartIcon/CartIcon";
 import SearchIcon from "../../07-shared/UI/Icon/SearchIcon/SearchIcon";
