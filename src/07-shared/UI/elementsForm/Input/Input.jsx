@@ -1,19 +1,27 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "./Input.module.scss";
 import PropTypes from "prop-types";
-const Input = ({ value, type, className, children, placeholder, onChange }) => {
+const Input = forwardRef(function Input({ id, value, type, className, min, max, step, children, placeholder, onChange, onClick }, ref) {
     return (
-        <input value={value} type={type} className={`${styled.input}` + " " + `${className}`} placeholder={placeholder} onChange={onChange}>
+        <input ref={ref} id={id} value={value} type={type} className={`${styled.input} ${className}`} min={min} max={max} step={step} placeholder={placeholder} onChange={onChange} onClick={onClick}>
             {children}
         </input>
     );
-};
+});
+
 Input.propTypes = {
     value: PropTypes.string,
+    id: PropTypes.string,
+    min: PropTypes.string,
+    max: PropTypes.string,
+    step: PropTypes.string,
     type: PropTypes.string,
     className: PropTypes.string,
     placeholder: PropTypes.string,
+
     onChange: PropTypes.func,
+    onClick: PropTypes.func,
+
     children: PropTypes.node,
 };
 export default Input;
