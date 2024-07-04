@@ -4,6 +4,7 @@ const initialState = {
     rangeScaleFirst: 0,
     rangeScaleSecond: 500,
     valueId: null,
+    valueSize: null,
 };
 
 const sidebarSlice = createSlice({
@@ -19,8 +20,11 @@ const sidebarSlice = createSlice({
         setValueId(state, action) {
             state.valueId = action.payload;
         },
+        setValueSize(state, action) {
+            state.valueSize = action.payload;
+        },
     },
 });
 
-export const { setRangeScaleFirst, setRangeScaleSecond, setValueId } = sidebarSlice.actions;
+export const { setRangeScaleFirst, setRangeScaleSecond, setValueId, setValueSize } = sidebarSlice.actions;
 export default sidebarSlice.reducer;

@@ -1,0 +1,43 @@
+.categories {
+    margin-bottom: 32px;
+    &__main-title {
+        font-family: var(--font-family-bold);
+        font-size: 18px;
+
+        margin: 0;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+
+        padding-left: 12px;
+        text-decoration: none;
+        margin-top: 7px;
+        &-item {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            height: 40px;
+            font-size: 15px;
+            //categories__list-item--active
+            &--active {
+                color: var(--color-green);
+                font-family: var(--font-family-black);
+                
+            }
+            &:hover {
+                background-color: var(--color-green-opc10);
+            }
+        }
+        &-title {
+            margin: 0;
+            width: 200px;
+            pointer-events: none;
+        }
+        &-count {
+            margin: 0;
+        }
+    }
+}

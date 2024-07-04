@@ -3,15 +3,17 @@ import Categories from "./components/Categories/Categories";
 import styled from "./Sidebar.module.scss";
 import PriceRange from "./components/PriceRange/PriceRange";
 import { useSelector } from "react-redux";
-import { setRangeScaleFirst, setRangeScaleSecond, setValueId } from "./features/sidebarSlice";
+import { setRangeScaleFirst, setRangeScaleSecond, setValueId, setValueSize } from "./features/sidebarSlice";
+import Size from "./components/Size/Size";
 const Sidebar = () => {
-    const { rangeScaleFirst, rangeScaleSecond, valueId } = useSelector((state) => state.sidebar);
+    const { rangeScaleFirst, rangeScaleSecond, valueId, valueSize } = useSelector((state) => state.sidebar);
 
     return (
         <aside className={styled["sidebar"]}>
-            <Categories setValueId={setValueId} valueId={valueId} />
+            <Categories valueId={valueId} setValueId={setValueId} />
             <PriceRange rangeScaleFirst={rangeScaleFirst} rangeScaleSecond={rangeScaleSecond} setRangeScaleFirst={setRangeScaleFirst} setRangeScaleSecond={setRangeScaleSecond} />
-            Side Sale IMG
+            <Size valueSize={valueSize} setValueSize={setValueSize} />
+            Sale IMG
         </aside>
     );
 };
