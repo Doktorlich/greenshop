@@ -1,5 +1,7 @@
 .categories {
     margin-bottom: 32px;
+    padding: 14px 24px 19px 18px;
+    background-color: var(--color-gray-light);
     &__main-title {
         font-family: var(--font-family-bold);
         font-size: 18px;
@@ -25,7 +27,6 @@
             &--active {
                 color: var(--color-green);
                 font-family: var(--font-family-black);
-                
             }
             &:hover {
                 background-color: var(--color-green-opc10);

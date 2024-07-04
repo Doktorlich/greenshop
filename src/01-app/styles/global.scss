@@ -57,3 +57,21 @@ input[type="submit"] {
     clip: rect(0 0 0 0) !important;
     overflow: hidden !important;
 }
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+.header {
+    grid-area: header;
+}
+.main {
+    grid-area: main;
+}
+.footer {
+    grid-area: footer;
+}

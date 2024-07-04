@@ -5,6 +5,7 @@ import PriceRange from "./components/PriceRange/PriceRange";
 import { useSelector } from "react-redux";
 import { setRangeScaleFirst, setRangeScaleSecond, setValueId, setValueSize } from "./features/sidebarSlice";
 import Size from "./components/Size/Size";
+import PreviewSale from "./components/PreviewSale/PreviewSale";
 const Sidebar = () => {
     const { rangeScaleFirst, rangeScaleSecond, valueId, valueSize } = useSelector((state) => state.sidebar);
 
@@ -13,7 +14,7 @@ const Sidebar = () => {
             <Categories valueId={valueId} setValueId={setValueId} />
             <PriceRange rangeScaleFirst={rangeScaleFirst} rangeScaleSecond={rangeScaleSecond} setRangeScaleFirst={setRangeScaleFirst} setRangeScaleSecond={setRangeScaleSecond} />
             <Size valueSize={valueSize} setValueSize={setValueSize} />
-            Sale IMG
+            <PreviewSale />
         </aside>
     );
 };

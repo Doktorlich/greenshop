@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 const Size = ({ valueSize, setValueSize }) => {
     const dispatch = useDispatch();
-    console.log(valueSize);
     return (
         <div className={styled["categories"]}>
             <h3 className={styled["categories__main-title"]}>Size</h3>
