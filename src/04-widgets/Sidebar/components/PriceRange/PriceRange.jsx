@@ -1,38 +1,44 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "./PriceRange.module.scss";
 import Input from "../../../../07-shared/UI/elementsForm/Input/Input";
+import { useDispatch } from "react-redux";
 
-const PriceRange = () => {
-    const [rangeScaleFirst, setRangeScaleFirst] = useState(0);
-    const [rangeScaleSecond, setRangeScaleSecond] = useState(500);
+import PropTypes from "prop-types";
+const PriceRange = ({ rangeScaleFirst, rangeScaleSecond, setRangeScaleFirst, setRangeScaleSecond }) => {
+    const dispatch = useDispatch();
     const maxRange = 2000;
     function changeRangeScaleFirstHandler(event) {
-        setRangeScaleFirst(+event.target.value);
+        dispatch(setRangeScaleFirst(+event.target.value));
 
-        if (rangeScaleFirst > rangeScaleSecond - 150) {
-            setRangeScaleSecond(rangeScaleSecond + 150);
+        if (rangeScaleFirst > rangeScaleSecond) {
+            dispatch(setRangeScaleSecond(rangeScaleFirst + 10));
         }
         if (rangeScaleSecond > maxRange) {
-            setRangeScaleSecond(maxRange);
+            dispatch(setRangeScaleSecond(maxRange));
         }
     }
     function changeRangeScaleSecondHandler(event) {
-        setRangeScaleSecond(+event.target.value);
+        dispatch(setRangeScaleSecond(+event.target.value));
 
-        if (rangeScaleSecond < rangeScaleFirst + 150) {
-            setRangeScaleFirst(rangeScaleFirst - 150);
+        if (rangeScaleSecond < rangeScaleFirst) {
+            dispatch(setRangeScaleFirst(rangeScaleSecond - 10));
         }
         if (+rangeScaleFirst < 0) {
-            setRangeScaleFirst(0);
+            dispatch(setRangeScaleFirst(0));
         }
     }
+
     const lineRef = useRef();
     function fillColor() {
         let percent1 = (rangeScaleFirst / maxRange) * 100;
         let percent2 = (rangeScaleSecond / maxRange) * 100;
         lineRef.current.style.background = `linear-gradient(to right, var(--color-green-opc20) ${percent1}% , var(--color-green) ${percent1}% , var(--color-green) ${percent2}%, var(--color-green-opc20) ${percent2}%)`;
+      
     }
-    fillColor();
+    useEffect(() => {
+        fillColor();
+    }, [rangeScaleFirst, rangeScaleSecond]);
+
     return (
         <>
             <div className={styled["price-range"]}>
@@ -43,8 +49,8 @@ const PriceRange = () => {
                         type={"range"}
                         className={styled["price-range__scale-first"]}
                         min={"0"}
-                        max={maxRange}
-                        value={rangeScaleFirst}
+                        max={String(maxRange)}
+                        value={String(rangeScaleFirst)}
                         step={"10"}
                         onChange={changeRangeScaleFirstHandler}
                     />
@@ -54,8 +60,8 @@ const PriceRange = () => {
                         type={"range"}
                         className={styled["price-range__scale-second"]}
                         min={"0"}
-                        max={maxRange}
-                        value={rangeScaleSecond}
+                        max={String(maxRange)}
+                        value={String(rangeScaleSecond)}
                         step={"10"}
                         onChange={changeRangeScaleSecondHandler}
                     />
@@ -71,6 +77,13 @@ const PriceRange = () => {
             </div>
         </>
     );
+};
+
+PriceRange.propTypes = {
+    rangeScaleFirst: PropTypes.number,
+    rangeScaleSecond: PropTypes.number,
+    setRangeScaleFirst: PropTypes.func,
+    setRangeScaleSecond: PropTypes.func,
 };
 
 export default PriceRange;

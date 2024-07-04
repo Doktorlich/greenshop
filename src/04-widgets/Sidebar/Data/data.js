@@ -9,3 +9,4 @@ export const CATEGORIES_LIST = [
     { id: 7, title: "Gardening" },
     { id: 8, title: "Accessories" },
 ];
+ 
