@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     rangeScaleFirst: 0,
     rangeScaleSecond: 500,
+    valueId: null,
 };
 
 const sidebarSlice = createSlice({
@@ -15,8 +16,11 @@ const sidebarSlice = createSlice({
         setRangeScaleSecond(state, action) {
             state.rangeScaleSecond = action.payload;
         },
+        setValueId(state, action) {
+            state.valueId = action.payload;
+        },
     },
 });
 
-export const { setRangeScaleFirst, setRangeScaleSecond } = sidebarSlice.actions;
+export const { setRangeScaleFirst, setRangeScaleSecond, setValueId } = sidebarSlice.actions;
 export default sidebarSlice.reducer;

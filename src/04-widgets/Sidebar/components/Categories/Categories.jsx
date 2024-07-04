@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { CATEGORIES_LIST } from "../../Data/data";
 import styled from "./Categories.module.scss";
-
-const Categories = () => {
-    const [valueId, setValueId] = useState("");
-    const changeValueIdHandler = (event) => {
-        if (event.target.hasAttribute("id")) {
-            setValueId(event.target.id);
-        }
-   
-    };
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+const Categories = ({ valueId, setValueId }) => {
+    const dispatch = useDispatch();
     return (
         <div className={styled["categories"]}>
             <h3 className={styled["categories__main-title"]}>Categories</h3>
-            <ul className={`${styled["categories__list"]}`} onClick={changeValueIdHandler}>
-                {CATEGORIES_LIST.map(({ id, title }) => (
-                    <li key={id} id={id} className={[`${styled["categories__list-item"]}`, valueId.toString() == id.toString() ? `${styled["categories__list-item--active"]}` : ""].join(" ")}>
-                        <p  className={styled["categories__list-title"]}>{title}</p>
+            <ul className={`${styled["categories__list"]}`}>
+                {CATEGORIES_LIST.map((title, index) => (
+                    <li
+                        key={index}
+                        onClick={() => dispatch(setValueId(index))}
+                        className={[`${styled["categories__list-item"]}`, valueId == index ? `${styled["categories__list-item--active"]}` : ""].join(" ")}
+                    >
+                        <p className={styled["categories__list-title"]}>{title}</p>
                         <p className={styled["categories__list-count"]}>(33)</p>
                     </li>
                 ))}
@@ -25,4 +24,8 @@ const Categories = () => {
     );
 };
 
+Categories.propTypes = {
+    valueId: PropTypes.number,
+    setValueId: PropTypes.func,
+};
 export default Categories;
