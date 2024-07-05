@@ -1,10 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// import { setProductData } from "../../07-shared/api/store/apiSlice";
+import axios from "axios";
+import { fetchProductData } from "../../07-shared/api/store/apiSlice";
 
 const Goods = () => {
-    const { productData } = useSelector((state) => state.apiProduct);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchProductData());
+    }, []);
 
-    console.log(productData);
     return <div></div>;
 };
 

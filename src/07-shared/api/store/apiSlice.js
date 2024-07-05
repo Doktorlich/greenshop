@@ -4,16 +4,12 @@ const initialState = {
     productData: [],
     status: "loading",
 };
-const type = "product/axiosByDataStatus";
-// parametrs
-const callback = async () => {
-    const url = "https://greenshop-f7505-default-rtdb.europe-west1.firebasedatabase.app/";
-    const response = await axios.get(url);
-    return response.data;
-};
-const options = {};
 
-export const axiosProductData = createAsyncThunk(type, callback, options);
+export const fetchProductData = createAsyncThunk("product/requestStatus", async () => {
+    const { data } = await axios.get("https://66877d2a0bc7155dc017dc35.mockapi.io/goods/goods");
+    console.log(data);
+    return data;
+});
 
 const apiSlice = createSlice({
     name: "apiProduct",
@@ -24,20 +20,23 @@ const apiSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(axiosProductData.pending, (state) => {
+        builder.addCase(fetchProductData.pending, (state) => {
             state.productData = [];
             state.status = "loading";
+            console.log("loading");
         });
-        builder.addCase(axiosProductData.fulfilled, (state, action) => {
+        builder.addCase(fetchProductData.fulfilled, (state, action) => {
             state.productData = action.payload;
             state.status = "succeeded";
+            console.log("succeeded");
         });
-        builder.addCase(axiosProductData.rejected, (state) => {
+        builder.addCase(fetchProductData.rejected, (state) => {
             state.productData = [];
             state.status = "failed";
+            console.log("get data error");
         });
     },
 });
 
-export const { setGoods } = apiSlice.actions;
+export const { setGoods, setProductData } = apiSlice.actions;
 export default apiSlice.reducer;
