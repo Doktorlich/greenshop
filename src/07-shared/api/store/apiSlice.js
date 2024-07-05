@@ -7,7 +7,7 @@ const initialState = {
 
 export const fetchProductData = createAsyncThunk("product/requestStatus", async () => {
     const { data } = await axios.get("https://66877d2a0bc7155dc017dc35.mockapi.io/goods/goods");
-    console.log(data);
+    // console.log(data);
     return data;
 });
 
