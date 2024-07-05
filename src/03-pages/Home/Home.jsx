@@ -3,6 +3,7 @@ import React from "react";
 import Sidebar from "../../04-widgets/Sidebar/Sidebar";
 import "./Home.scss";
 import Sorting from "../../04-widgets/Sorting/Sorting";
+import Goods from "../../04-widgets/Goods/Goods";
 
 const Home = () => {
     return (
@@ -15,8 +16,8 @@ const Home = () => {
                 </div>
                 <div className="sorting-component">
                     <Sorting />
+                    <Goods />
                 </div>
-
                 {/* <Products></Products> */}
             </section>
         </main>
