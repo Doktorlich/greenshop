@@ -1,0 +1,49 @@
+.hover-btns {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 258px;
+    height: 250px;
+
+    background-color: transparent;
+
+    overflow: hidden;
+
+    &__list {
+        display: flex;
+        column-gap: 10px;
+        margin-bottom: 7px;
+    }
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 4px;
+        background-color: var(--color-light);
+        transform: translateY(60px);
+        transition-duration: 0.2s;
+    }
+}
+.hover-btns--hide {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 258px;
+    height: 250px;
+    background-color: transparent;
+    border-top: 1px solid var(--color-green);
+
+    .hover-btns__item {
+        transform: translateY(0px);
+        transition-duration: 0.2s;
+        cursor: pointer;
+        &:hover {
+            color: var(--color-green-opc50);
+        }
+    }
+}

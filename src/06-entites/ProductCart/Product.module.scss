@@ -15,13 +15,16 @@
     padding: 7px 8px 6px 9px;
     background-color: var(--color-green);
     color: var(--color-light);
+    z-index: 1;
 }
 .menu__wrapper-image {
+    position: relative;
     background-color: var(--color-gray-light);
     margin-bottom: 12px;
 }
 .menu__image {
     padding: 31px 4px 19px;
+    margin-left: 4px;
 }
 .menu__title {
     margin-bottom: 6px;
