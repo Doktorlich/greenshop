@@ -3,13 +3,12 @@ import styled from "./Sorting.module.scss";
 import { SORT_NAMES_LEFT } from "./data/data";
 import Arrow from "../../07-shared/UI/Icon/Arrow/Arrow";
 import { useDispatch, useSelector } from "react-redux";
-import { setSortValueLeft } from "./features/sortingSlice";
+import { setSortValueLeft } from "./provider/sortingSlice";
 
 const Sorting = () => {
     const { sortValueLeft } = useSelector((state) => state.sorting);
     const dispatch = useDispatch();
-    console.log(sortValueLeft);
-    // sorting__left-elem--active
+
     return (
         <div className={styled["sorting"]}>
             <ul className={styled["sorting__left-sort"]}>

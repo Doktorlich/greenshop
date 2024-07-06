@@ -26,6 +26,7 @@ const ProductHover = ({ includeValue, valueId, id }) => {
 ProductHover.propTypes = {
     includeValue: PropTypes.bool,
     valueId: PropTypes.string,
+    id: PropTypes.string,
 };
 
 export default ProductHover;

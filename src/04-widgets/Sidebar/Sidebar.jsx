@@ -3,7 +3,7 @@ import Categories from "./components/Categories/Categories";
 import styled from "./Sidebar.module.scss";
 import PriceRange from "./components/PriceRange/PriceRange";
 import { useSelector } from "react-redux";
-import { setRangeScaleFirst, setRangeScaleSecond, setValueId, setValueSize } from "./features/sidebarSlice";
+import { setRangeScaleFirst, setRangeScaleSecond, setValueId, setValueSize } from "./provider/sidebarSlice";
 import Size from "./components/Size/Size";
 import PreviewSale from "./components/PreviewSale/PreviewSale";
 const Sidebar = () => {
