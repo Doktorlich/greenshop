@@ -5,7 +5,7 @@
     justify-content: end;
     list-style: none;
     width: 258px;
-    height: 300px;
+  
 }
 .menu__discount {
     position: absolute;
@@ -21,10 +21,12 @@
     position: relative;
     background-color: var(--color-gray-light);
     margin-bottom: 12px;
+    height: 300px;
 }
 .menu__image {
     padding: 31px 4px 19px;
     margin-left: 4px;
+    height: 286px;
 }
 .menu__title {
     margin-bottom: 6px;
