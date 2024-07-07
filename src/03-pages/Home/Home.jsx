@@ -4,6 +4,7 @@ import Sidebar from "../../04-widgets/Sidebar/Sidebar";
 import "./Home.scss";
 import Sorting from "../../04-widgets/Sorting/Sorting";
 import Goods from "../../04-widgets/Goods/Goods";
+import BlogPosts from "../../04-widgets/BlogPosts/BlogPosts";
 
 const Home = () => {
     return (
@@ -18,7 +19,9 @@ const Home = () => {
                     <Sorting />
                     <Goods />
                 </div>
-                {/* <Products></Products> */}
+            </section>
+            <section className="section-blog">
+                <BlogPosts />
             </section>
         </main>
     );
