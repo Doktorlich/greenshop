@@ -5,6 +5,7 @@ import "./Home.scss";
 import Sorting from "../../04-widgets/Sorting/Sorting";
 import Goods from "../../04-widgets/Goods/Goods";
 import BlogPosts from "../../04-widgets/BlogPosts/BlogPosts";
+import ArticleCards from "../../04-widgets/ArticleCards/ArticleCards";
 
 const Home = () => {
     return (
@@ -19,6 +20,9 @@ const Home = () => {
                     <Sorting />
                     <Goods />
                 </div>
+            </section>
+            <section className="section-article-card">
+                <ArticleCards />
             </section>
             <section className="section-blog">
                 <BlogPosts />
