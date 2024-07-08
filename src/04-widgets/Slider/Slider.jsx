@@ -1,24 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "./Slider.module.scss";
 import SliderBlock from "../../06-entities/SliderBlock/SliderBlock";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSlide } from "./provider/sliderSlice";
 // import Button from "../../07-shared/UI/Button/Button";
 const Slider = () => {
-    const { productData } = useSelector((state) => state.apiProduct);
-    const [slide, setSlide] = useState(0);
+    const { productData, status } = useSelector((state) => state.apiProduct);
+    const { slide } = useSelector((state) => state.carousel);
+    const dispatch = useDispatch();
+
     useEffect(() => {
         const timer = setInterval(() => {
             if (slide < 2) {
-                setSlide(slide + 1);
+                dispatch(setSlide(slide + 1));
             } else {
-                setSlide(0);
+                dispatch(setSlide(0));
             }
         }, 5000);
-
-        // очистка интервала
         return () => clearInterval(timer);
     }, [slide]);
-    if (!productData.length > 0) {
+    if (status !== "succeeded") {
         return;
     }
     const SLIDER_LIST = [
@@ -35,7 +36,13 @@ const Slider = () => {
 
             <div className={styled.breadcrumbs}>
                 {SLIDER_LIST.map((_, index) => {
-                    return <button key={index} onClick={() => setSlide(index)} className={[styled["breadcrumbs__elem"], +slide == +index ? `${styled["breadcrumbs__elem--active"]}` : ""].join(" ")} />;
+                    return (
+                        <button
+                            key={index}
+                            onClick={() => dispatch(setSlide(index))}
+                            className={[styled["breadcrumbs__elem"], +slide == +index ? `${styled["breadcrumbs__elem--active"]}` : ""].join(" ")}
+                        />
+                    );
                 })}
             </div>
         </div>
