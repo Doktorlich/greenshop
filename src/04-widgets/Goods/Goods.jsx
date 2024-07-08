@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "../../07-shared/api/store/apiSlice";
 import styled from "./Goods.module.scss";
-import Product from "../../06-entities/ProductCart/Product";
+import Product from "../../06-entities/ProductCard/Product";
 import ProductHover from "../../05-features/ProductHover/ProductHover";
 import { setIncludeValue, setValueId } from "./provider/goodsSlice";
 import Pagination from "../../05-features/Pagination/Pagination";

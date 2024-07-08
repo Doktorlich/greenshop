@@ -25,6 +25,7 @@ const Post = ({ ...item }) => {
     );
 };
 
+
 Post.propTypes = {
     item: PropTypes.string,
 };

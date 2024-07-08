@@ -1,0 +1,117 @@
+// @mixin visually-hidden {
+//     position: absolute !important;
+//     width: 1px !important;
+//     height: 1px !important;
+//     margin: -1px !important;
+//     border: 0 !important;
+//     padding: 0 !important;
+//     white-space: nowrap !important;
+//     clip-path: inset(100%) !important;
+//     clip: rect(0 0 0 0) !important;
+//     overflow: hidden !important;
+// }
+
+.main-title {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+.slider {
+    position: absolute;
+    display: flex;
+    transition-duration: 1.5s !important;
+    background: var(--color-gray-gradient);
+    width: 1200px;
+    margin-top: 52px;
+    margin-bottom: 46px;
+    opacity: 0;
+}
+.slider__left-container {
+    padding-top: 65px;
+    padding-bottom: 85px;
+    padding-left: 40px;
+    width: 570px;
+}
+.slider__subtitle {
+    margin-bottom: 7px;
+
+    font-family: var(--font-family-medium);
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.slider__title {
+    margin-bottom: 5px;
+
+    font-family: var(--font-family-black);
+    font-size: 70px;
+    line-height: 70px;
+    text-transform: uppercase;
+    & span {
+        color: var(--color-green);
+    }
+}
+.slider__description {
+    margin-bottom: 44px;
+
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-gray-dark);
+}
+
+.slider__image-container {
+    display: flex;
+}
+.slider__image-small {
+    position: absolute;
+    bottom: 22px;
+    right: 390px;
+    z-index: 10;
+    width: 134px;
+    height: 135px;
+}
+.slider__image-big {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    width: 495px;
+    height: 500px;
+}
+
+.button {
+    width: 140px;
+    height: 40px;
+    &:active {
+        background-color: var(--color-light);
+        color: var(--color-green);
+        border: 1px solid var(--color-green);
+    }
+}
+.slider__image-container {
+    display: flex;
+}
+.slider__image-small {
+    position: absolute;
+    bottom: 22px;
+    right: 390px;
+    z-index: 10;
+    width: 134px;
+    height: 135px;
+}
+.slider__image-big {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    width: 495px;
+    height: 500px;
+}

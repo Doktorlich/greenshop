@@ -1,25 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "./Slider.module.scss";
-
-import Button from "../../07-shared/UI/Button/Button";
+import SliderBlock from "../../06-entities/SliderBlock/SliderBlock";
+import { useSelector } from "react-redux";
+// import Button from "../../07-shared/UI/Button/Button";
 const Slider = () => {
-    return (
-        <div className={styled.slider}>
-            <div className={styled["slider__left-container"]}>
-                <h1 className={styled["main-title"]}>Let’s Make a Better Planet</h1>
-                <h3 className={styled["slider__subtitle"]}>Welcome to GreenShop</h3>
-                <h2 className={styled["slider__title"]}>Let’s Make a Better Planet</h2>
+    const { productData } = useSelector((state) => state.apiProduct);
+    const [slide, setSlide] = useState(0);
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if (slide < 2) {
+                setSlide(slide + 1);
+            } else {
+                setSlide(0);
+            }
+        }, 5000);
 
-                <p className={styled["slider__description"]}>
-                    We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create an unique Urban Jungle. Order your favorite plants!
-                </p>
-                <Button className={styled["button"]}>SHOP NOW</Button>
+        // очистка интервала
+        return () => clearInterval(timer);
+    }, [slide]);
+    if (!productData.length > 0) {
+        return;
+    }
+    const SLIDER_LIST = [
+        { id: productData[1].id, image: productData[1].urlImagePreview },
+        { id: productData[2].id, image: productData[2].urlImagePreview },
+        { id: productData[3].id, image: productData[3].urlImagePreview },
+    ];
+
+    return (
+        <div className={styled["slider-carousel"]}>
+            {SLIDER_LIST.map(({ ...item }, index) => (
+                <SliderBlock key={item.id} {...item} className={+slide == +index ? `${styled["slider--active"]}` : ""} />
+            ))}
+
+            <div className={styled.breadcrumbs}>
+                {SLIDER_LIST.map((_, index) => {
+                    return <button key={index} onClick={() => setSlide(index)} className={[styled["breadcrumbs__elem"], +slide == +index ? `${styled["breadcrumbs__elem--active"]}` : ""].join(" ")} />;
+                })}
             </div>
-            <div className={styled["slider__image-container"]}>
-                <img className={styled["slider__image-big"]} src="" />
-                <img className={styled["slider__image-small"]} src="" />
-            </div>
-            <div className={styled.breadcrumbs}></div>
         </div>
     );
 };

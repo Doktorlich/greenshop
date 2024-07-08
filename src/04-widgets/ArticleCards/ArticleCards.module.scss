@@ -1,0 +1,8 @@
+.section-article-card__inner {
+}
+.section-article-card__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 302px;
+    column-gap: 28px;
+}
