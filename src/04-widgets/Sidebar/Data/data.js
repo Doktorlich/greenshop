@@ -11,7 +11,7 @@ export const CATEGORIES_LIST = [
     { title: "Accessories", amount: 0 },
 ];
 export const SIZE_LIST = [
-    { title: "Small", amount: 0 },
-    { title: "Medium", amount: 0 },
-    { title: "Large", amount: 0 },
+    { title: "Small", amount: 0, abbreviation: "S" },
+    { title: "Medium", amount: 0, abbreviation: "M" },
+    { title: "Large", amount: 0, abbreviation: ["L", "XL"] },
 ];

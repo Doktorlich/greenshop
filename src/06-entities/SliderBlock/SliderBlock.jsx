@@ -5,9 +5,9 @@ import Button from "../../07-shared/UI/Button/Button";
 import { useSelector } from "react-redux";
 
 const Slider = ({ ...slide }) => {
-    const { productData } = useSelector((state) => state.apiProduct);
-   
-    if (!productData.length > 0) {
+    const { status } = useSelector((state) => state.apiProduct);
+
+    if (status !== "succeeded") {
         return;
     }
 

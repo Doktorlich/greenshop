@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SIZE_LIST } from "../../Data/data";
 import styled from "./Size.module.scss";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-// import { elementCountingSize } from "../../../../05-features/elementСounting/elementСounting";
+import { useDispatch, useSelector } from "react-redux";
+import { elementCountingSize } from "../../../../05-features/elementСounting/elementСounting";
+
 const Size = ({ valueSize, setValueSize }) => {
     const dispatch = useDispatch();
-    // useEffect(() => {
-    //     elementCountingSize(SIZE_LIST, productData);
-    // }, [productData]);
+    const { productData, status } = useSelector((state) => state.apiProduct);
+    const sizeList = elementCountingSize(SIZE_LIST, productData);
 
+    if (status !== "succeeded") {
+        return;
+    }
     return (
         <div className={styled["categories"]}>
             <h3 className={styled["categories__main-title"]}>Size</h3>
             <ul className={`${styled["categories__list"]}`}>
-                {SIZE_LIST.map(({ title, amount }, index) => (
+                {sizeList.map(({ title, amount }, index) => (
                     <li
                         key={index}
                         onClick={() => dispatch(setValueSize(index))}
