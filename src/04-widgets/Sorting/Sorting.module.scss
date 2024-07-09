@@ -1,4 +1,5 @@
 .sorting {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 838px;
@@ -25,6 +26,7 @@
     }
     &__right-sort {
         display: flex;
+        cursor: pointer;
     }
     &__right-name {
         margin-bottom: 0;
@@ -33,6 +35,9 @@
     &__right-popup {
         margin: 0;
         margin-right: 5px;
+        &:hover {
+            color: var(--color-green);
+        }
     }
     &__arrow {
         width: 16px;

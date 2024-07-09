@@ -1,9 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ArrowLineLink = ({ className }) => {
+const ArrowLineLink = ({ className, transform }) => {
     return (
-        <svg className={className} width="15.960083" height="16.000000" viewBox="0 0 15.9601 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg
+            className={className}
+            transform={transform}
+            width="15.960083"
+            height="16.000000"
+            viewBox="0 0 15.9601 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
             <defs />
             <rect id="Iconly/Light-Outline/Arrow - Right" width="15.960079" height="16.000000" fill="#FFFFFF" fillOpacity="0" />
             <path

@@ -30,13 +30,3 @@ export const elementCountingSize = (SIZE_LIST, productData) => {
     });
     return updatedSizeList;
 };
-
-// 1------ SIZE_LIST = [
-//     { title: "Small", amount: 0 ,abbreviation:"S"},
-//     { title: "Medium", amount: 0 ,abbreviation:"M"},
-//     { title: "Large", amount: 0 ,abbreviation:["L"],
-//     { title: "Large", amount: 0 ,abbreviation:["XL"]}
-
-// ];
-// 2-----productData
-// 3------ "size": ["S", "M", "L", "XL"],
