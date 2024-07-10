@@ -6,6 +6,7 @@ import Product from "../../06-entities/ProductCard/Product";
 import ProductHover from "../../05-features/ProductHover/ProductHover";
 import { setIncludeValue, setValueId } from "./provider/goodsSlice";
 import Pagination from "../../05-features/Pagination/Pagination";
+import { Link } from "react-router-dom";
 const Goods = () => {
     const { productData } = useSelector((state) => state.apiProduct);
     const { includeValue, valueId } = useSelector((state) => state.goods);
@@ -34,6 +35,9 @@ const Goods = () => {
                                 dispatch(setIncludeValue(false));
                             }}
                         >
+                            <Link to={`/product/${product.id}`}>
+                                <div className={styled["wrapper-link-product"]}></div>
+                            </Link>
                             <ProductHover includeValue={includeValue} valueId={valueId} id={product.id} />
                         </Product>
                     ))}

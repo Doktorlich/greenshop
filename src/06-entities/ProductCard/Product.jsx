@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import styled from "./Product.module.scss";
 
 const Product = ({ prise, title, urlImagePreview, discount, children, onMouseEnter, onMouseLeave }) => {
@@ -11,6 +10,7 @@ const Product = ({ prise, title, urlImagePreview, discount, children, onMouseEnt
                 {children}
                 <img className={styled["menu__image"]} src={urlImagePreview} width={"250px"} height={"250px"} />
             </div>
+
             <h3 className={styled["menu__title"]}>{title}</h3>
             <div className={styled["menu__price"]}>
                 <p className={styled["menu__price-real"]}>${+discount > 0 ? (prise - prise * (+discount / 100)).toFixed(2) : prise.toFixed(2)}</p>

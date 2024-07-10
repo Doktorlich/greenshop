@@ -9,6 +9,7 @@ import Footer from "../04-widgets/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import OutletParent from "../02-processes/Outlet/OutletParent";
 import UserAccount from "../03-pages/Account/UserAccount";
+import ProductView from "../03-pages/ProductViev/ProductView";
 
 function App() {
     return (
@@ -16,7 +17,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<OutletParent />}>
                     <Route path="" element={<Home />} />
-                    {/* <Route path="/product/:name" element={<ProductView />} /> */}
+                    <Route path="/shop/:id" element={<ProductView />} />
 
                     {/* <Route path="/cart" element={<Cart />} /> */}
                     {/* <Route path="/product-checkout" element={<ProductCheckout />} /> */}
