@@ -6,6 +6,7 @@ import goods from "../../04-widgets/Goods/provider/goodsSlice";
 import pagination from "../../05-features/Pagination/provider/paginationSlice";
 import carousel from "../../04-widgets/Slider/provider/sliderSlice";
 import productView from "../../03-pages/ProductViev/provider/productViewSlice";
+import productDetails from "../../04-widgets/ProductDetails/provider/productDetails";
 export const store = configureStore({
     reducer: {
         sidebar,
@@ -15,5 +16,6 @@ export const store = configureStore({
         pagination,
         carousel,
         productView,
+        productDetails,
     },
 });

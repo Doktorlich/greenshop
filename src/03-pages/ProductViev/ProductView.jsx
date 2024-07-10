@@ -4,21 +4,28 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setValueData } from "./provider/productViewSlice";
-import { fetchProductData } from "./api/fetchProductData";
+import { fetchProductDataFunc } from "./api/fetchProductData";
+import { fetchProductData } from "../../07-shared/api/store/apiSlice";
+import ProductDetails from "../../04-widgets/ProductDetails/ProductDetails";
 const ProductView = () => {
+    const { status } = useSelector((state) => state.apiProduct);
+    useEffect(() => {
+        dispatch(fetchProductData());
+        fetchProductDataFunc(dispatch, setValueData, axios, id);
+        return () => {};
+    }, []);
+    const dispatch = useDispatch();
     const { id } = useParams();
     const { valueData } = useSelector((state) => state.productView);
 
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        fetchProductData(dispatch, setValueData, axios, id);
-    }, []);
-
-    if (!valueData) {
+    if (!valueData && status !== "succeeded") {
         return "Загрузка...";
     }
-    return <div>{valueData.title}</div>;
+    return (
+        <section className={styled["section-details"]}>
+            <ProductDetails />
+        </section>
+    );
 };
 
 export default ProductView;

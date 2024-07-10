@@ -35,7 +35,7 @@ const Goods = () => {
                                 dispatch(setIncludeValue(false));
                             }}
                         >
-                            <Link to={`/product/${product.id}`}>
+                            <Link to={`/shop/${product.id}`}>
                                 <div className={styled["wrapper-link-product"]}></div>
                             </Link>
                             <ProductHover includeValue={includeValue} valueId={valueId} id={product.id} />
