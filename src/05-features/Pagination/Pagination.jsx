@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "./Pagination.module.scss";
 import { setDataPerPage, setPagCurrent } from "./provider/paginationSlice";
 import ArrowPagination from "../../07-shared/UI/Icon/Arrow/ArrowPagination";
-const Pagination = ({ amountProducts, productData }) => {
+const Pagination = ({ amountProducts, productData, scrollIdRef }) => {
     const { pagCurrent } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
 
@@ -18,12 +18,17 @@ const Pagination = ({ amountProducts, productData }) => {
 
     const movingLeft = function () {
         dispatch(setPagCurrent(+pagCurrent === 1 ? pagCurrent : +pagCurrent - 1));
-        scroll(0, 0);
+        scrollToElement();
     };
 
     const movingRight = function () {
         dispatch(setPagCurrent(+pagCurrent === amountElemPag ? pagCurrent : +pagCurrent + 1));
-        scroll(0, 0);
+        scrollToElement();
+    };
+    const scrollToElement = () => {
+        if (scrollIdRef.current) {
+            scrollIdRef.current.scrollIntoView({ behavior: "smooth" });
+        }
     };
     useEffect(() => {
         dispatch(setDataPerPage(productData.slice(startIndex, endIndex)));
@@ -44,7 +49,7 @@ const Pagination = ({ amountProducts, productData }) => {
                             id="count-pag"
                             onClick={() => {
                                 dispatch(setPagCurrent(page));
-                                scroll(0, 0);
+                                scrollToElement();
                             }}
                             className={[+pagCurrent === +page ? `${styled["pagination__item--active"]}` : `${styled["pagination__item"]}`, `${styled["count-pag"]}`].join(" ")}
                         >
@@ -64,6 +69,7 @@ const Pagination = ({ amountProducts, productData }) => {
 Pagination.propTypes = {
     amountProducts: PropTypes.number,
     productData: PropTypes.array,
+    scrollIdRef: PropTypes.object,
 };
 
 export default Pagination;

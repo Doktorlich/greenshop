@@ -14,7 +14,7 @@ const Home = () => {
             <section className="section-slider">
                 <Slider />
             </section>
-            <section className="section-main">
+            <section className="section-main" id="section-main">
                 {/* ! прописать логику присвоения класса для sidebar*/}
                 <div className="sidebar-component">
                     <Sidebar className="sidebar" />

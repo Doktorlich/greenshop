@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "../../07-shared/api/store/apiSlice";
 import styled from "./Goods.module.scss";
@@ -11,7 +11,7 @@ const Goods = () => {
     const { includeValue, valueId } = useSelector((state) => state.goods);
     const { dataPerPage } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
-
+    const scrollIdRef = useRef();
     useEffect(() => {
         dispatch(fetchProductData());
         return () => {};
@@ -19,7 +19,7 @@ const Goods = () => {
 
     return (
         <>
-            <div className={styled["product__menu"]}>
+            <div ref={scrollIdRef} className={styled["product__menu"]}>
                 <ul className={styled["menu__list"]}>
                     {dataPerPage.map((product) => (
                         <Product
@@ -40,7 +40,7 @@ const Goods = () => {
                 </ul>
             </div>
             <div className={styled["pagination"]}>
-                <Pagination productData={productData} amountProducts={9} />
+                <Pagination productData={productData} amountProducts={9} scrollIdRef={scrollIdRef} />
             </div>
         </>
     );
