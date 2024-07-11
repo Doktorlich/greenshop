@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     imageDetailsProductId: 0,
+    sizeParamsId: 0,
 };
 
 export const goodsSlice = createSlice({
@@ -10,7 +11,10 @@ export const goodsSlice = createSlice({
         setImageDetailsProductId(state, action) {
             state.imageDetailsProductId = action.payload;
         },
+        setSizeParamsId(state, action) {
+            state.sizeParamsId = action.payload;
+        },
     },
 });
-export const { setImageDetailsProductId } = goodsSlice.actions;
+export const { setImageDetailsProductId, setSizeParamsId } = goodsSlice.actions;
 export default goodsSlice.reducer;

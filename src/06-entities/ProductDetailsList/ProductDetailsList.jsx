@@ -4,13 +4,14 @@ import styled from "./ProductDetailsList.module.scss";
 import { iconSocialMedia } from "./data/iconSocialMedia.js";
 import { Link } from "react-router-dom";
 
-const ProductDetailsList = ({ valueData }) => {
+const ProductDetailsList = ({ valueData, children }) => {
     const tags = valueData.tags.join(", ");
 
     return (
         <div className={styled["section-details__parameters"]}>
             <h3 className={styled["section-details__title"]}>{valueData.title}</h3>
             {/* ---------------------------- */}
+            {children}
             <div className={styled["section-details__short-description-block"]}>
                 <p className={styled["section-details__subtitle"]}>Short Description:</p>
                 <p className={styled["section-details__text"]}>{valueData.mainDescription}</p>
@@ -31,7 +32,7 @@ const ProductDetailsList = ({ valueData }) => {
                         return (
                             <li key={index} className={styled["section-details__item"]}>
                                 <Link to="" className={styled["section-details__link"]}>
-                                    <img className={styled["section-details__icon"]} src={`${item}`} alt=""/>
+                                    <img className={styled["section-details__icon"]} src={`${item}`} alt="" />
                                 </Link>
                             </li>
                         );
@@ -44,6 +45,7 @@ const ProductDetailsList = ({ valueData }) => {
 
 ProductDetailsList.propTypes = {
     valueData: PropTypes.object.isRequired,
+    children: PropTypes.node,
 };
 
 export default ProductDetailsList;
