@@ -1,4 +1,5 @@
 .count-product-details {
+    margin-bottom: 24px;
 }
 .count-product-details__title {
     margin-bottom: 11px;
@@ -33,4 +34,82 @@
     border: 1px solid var(--color-green);
     color: var(--color-green);
     font-family: var(--font-family-bold);
+}
+.cart-count {
+    display: flex;
+    column-gap: 26px;
+    margin-top: 24px;
+    margin-top: 24px;
+
+    &__counting {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 120px;
+    }
+    &__inc-dec {
+        width: 33px;
+        height: 38px;
+        border-radius: 29px;
+        background-color: var(--color-green);
+        color: var(--color-light);
+        font-size: 25px;
+        border: 1px solid var(--color-green);
+
+        &:active {
+            background-color: var(--color-light);
+            color: var(--color-green);
+            border: 1px solid var(--color-green);
+        }
+    }
+    &__number {
+        font-style: 20px;
+        line-height: 10px;
+    }
+
+    &__button-list {
+        display: flex;
+        column-gap: 10px;
+    }
+    &__btn-buy,
+    &__btn-add {
+        padding-top: 11px;
+        padding-bottom: 9px;
+        width: 130px;
+        text-align: center;
+        text-transform: uppercase;
+
+        font-family: var(--font-family-bold);
+        font-size: 14px;
+        line-height: 20px;
+        border: 1px solid var(--color-green);
+    }
+    &__btn-buy {
+        &:active {
+            background-color: var(--color-light);
+            color: var(--color-green);
+        }
+    }
+
+    &__btn-add {
+        background-color: var(--color-light);
+        color: var(--color-green);
+        &:active {
+            background-color: var(--color-green);
+            color: var(--color-light);
+        }
+    }
+    &__btn-heart {
+        width: 40px;
+        height: 40px;
+        background-color: var(--color-light);
+        color: var(--color-green);
+        border: 1px solid var(--color-green);
+        &:active {
+            color: var(--color-light);
+            background-color: var(--color-green);
+        }
+    }
+    &__heart-icon {
+    }
 }

@@ -1,0 +1,37 @@
+.product-stars {
+    display: flex;
+    border-bottom: 1px solid var(--color-green-opc50);
+    justify-content: space-between;
+    padding-bottom: 11px;
+    &__price {
+        color: var(--color-green);
+        font-family: var(--font-family-bold);
+        font-size: 22px;
+        line-height: 16px;
+    }
+
+    &__block-count-review {
+        display: flex;
+        column-gap: 10px;
+    }
+    &__count-review {
+        font-size: 15px;
+        line-height: 16px;
+    }
+}
+
+.menu__price {
+    display: flex;
+    column-gap: 16px;
+    font-family: var(--font-family-bold);
+    &-real {
+        color: var(--color-green);
+        font-family: var(--font-family-bold);
+        font-size: 22px;
+        line-height: 16px;
+    }
+    &-discount {
+        text-decoration: line-through;
+        color: var(--color-gray-medium);
+    }
+}
