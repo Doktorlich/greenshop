@@ -1,0 +1,24 @@
+.tabs {
+    &__title-list {
+        display: flex;
+        column-gap: 30px;
+        border-bottom: 1px solid var(--color-green-opc50);
+        margin-bottom: 18px;
+    }
+    &__title-item {
+        padding-bottom: 11px;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+
+        font-size: 17px;
+        line-height: 16px;
+    }
+    &__title-item--active {
+        border-bottom: 3px solid var(--color-green);
+
+        font-size: 17px;
+        line-height: 16px;
+        font-family: var(--font-family-bold);
+        color: var(--color-green);
+    }
+}

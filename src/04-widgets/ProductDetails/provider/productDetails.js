@@ -3,6 +3,7 @@ const initialState = {
     imageDetailsProductId: 0,
     sizeParamsId: 0,
     starCurrent: null,
+    activeTab: 0,
 };
 
 export const goodsSlice = createSlice({
@@ -18,7 +19,10 @@ export const goodsSlice = createSlice({
         setStarCurrent(state, action) {
             state.starCurrent = action.payload;
         },
+        setActiveTab(state, action) {
+            state.activeTab = action.payload;
+        },
     },
 });
-export const { setImageDetailsProductId, setSizeParamsId, setStarCurrent } = goodsSlice.actions;
+export const { setImageDetailsProductId, setSizeParamsId, setStarCurrent, setActiveTab } = goodsSlice.actions;
 export default goodsSlice.reducer;
