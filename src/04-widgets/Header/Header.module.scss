@@ -1,3 +1,4 @@
+@import "../../01-app/styles/global.scss";
 .button {
     width: 100px;
     height: 35px;
@@ -46,5 +47,71 @@
     width: 20px;
     height: 20px;
 }
-header {
+// ------------------------
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+.auth-btns {
+    display: flex;
+    column-gap: 12px;
+    &__item {
+        background-color: transparent;
+    }
+    &__text {
+        color: var(--color-dark);
+        font-family: var(--font-family-medium);
+        font-size: 20px;
+        line-height: 16px;
+        &:hover {
+            color: var(--color-green-opc50);
+        }
+    }
+    &__text--active {
+        color: var(--color-green);
+    }
+}
+
+.auth-other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    margin-top: 40px;
+
+    &__text {
+        position: relative;
+        font-size: 13px;
+        line-height: 16px;
+        background-color: white;
+        isolation: isolate;
+        padding: 0 8px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 1px;
+            background-color: var(--color-gray-medium);
+            top: 50%;
+            mix-blend-mode: overlay;
+
+            @include abs-center;
+        }
+    }
+    &__btn {
+        width: 300px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 1px solid var(--color-gray-medium);
+        color: var(--color-gray-dark);
+        &:active {
+            background-color: var(--color-green-opc20);
+        }
+    }
+    &__btn img {
+        margin-right: 10px;
+    }
 }

@@ -18,4 +18,4 @@ export default OutletParent;
 
 OutletParent.propTypes = {
     children: PropTypes.node,
-};
+}; 
