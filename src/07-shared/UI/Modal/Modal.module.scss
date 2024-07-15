@@ -1,10 +1,10 @@
 @import "../../../01-app/styles/global.scss";
 
 .modal {
+    position: fixed;
     height: 100vh;
     width: 100vw;
     background-color: var(--color-background-modal);
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
@@ -19,7 +19,19 @@
 }
 .modal__content {
     width: 500px;
-    height: 600px;
+  
     background-color: var(--color-light);
     @include abs-center;
+}
+.cross {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+    &:active {
+        transform: rotate(45deg);
+        transition: 0.5s;
+    }
 }

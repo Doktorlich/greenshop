@@ -5,10 +5,7 @@ const Form = ({ className, children }) => {
     return <form className={`${styled.className}` + " " + `${className}`}>{children}</form>;
 };
 Form.propTypes = {
-   
-  
     className: PropTypes.string,
-
     children: PropTypes.node,
 };
 export default Form;
