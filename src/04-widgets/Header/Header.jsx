@@ -27,7 +27,7 @@ const Header = () => {
         <>
             <header className={styled["header"]}>
                 <div className={styled["header__inner"]}>
-                    <Link to={"/"}>
+                    <Link to={"/home"}>
                         <Logo className={styled.logo} />
                     </Link>
 
@@ -36,7 +36,7 @@ const Header = () => {
                         <SearchIcon className={styled.icon} />
 
                         <div className={styled["icon-wrapper"]}>
-                            <Link to={"/cart"}>
+                            <Link to={"/shop/cart"}>
                                 <CartIcon className={[styled.icon, styled["icon__cart"]].join(" ")} />
                                 <span className={styled["count-product-cart"]}>1</span>
                             </Link>

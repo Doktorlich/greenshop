@@ -1,26 +1,24 @@
 import React from "react";
 import styled from "./Navbar.module.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 const NAV_LIST = [
-    { urlFragment: "/", title: "Home" },
+    { urlFragment: "/home", title: "Home" },
     { urlFragment: "/shop", title: "Shop" },
     { urlFragment: "/plant_care", title: "Plant Care" },
     { urlFragment: "/blogs", title: "Blogs" },
 ];
 const Navbar = () => {
-    // const changeActivePageHandler = (event) => {
-    //     console.log(event.target);
-    //     event.target.classList.add(styled["nav__menu-item--active"]);
-    // };
+    let location = useLocation();
+    console.log(location.pathname.includes("shop"));
     return (
         <nav className={styled["nav"]}>
             <ul className={styled["nav__menu-list"]}>
                 {NAV_LIST.map((item, index) => {
                     return (
-                        <li key={index} className={`${styled["nav__menu-item"]}`}>
-                            <Link to={item.urlFragment} className={styled["nav__menu-link"]}>
+                        <li key={index} className={[styled["nav__menu-item"], location.pathname.includes(item.urlFragment) ? styled["nav__menu-item--active"] : ""].join(" ")}>
+                            <NavLink to={item.urlFragment} className={styled["nav__menu-link"]}>
                                 {item.title}
-                            </Link>
+                            </NavLink>
                         </li>
                     );
                 })}
