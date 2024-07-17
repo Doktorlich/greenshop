@@ -8,6 +8,8 @@ import carousel from "../../04-widgets/Slider/provider/sliderSlice";
 import productView from "../../03-pages/ProductViev/provider/productViewSlice";
 import productDetails from "../../04-widgets/ProductDetails/provider/productDetails";
 import headerSlice from "../../04-widgets/Header/provider/headerSlice";
+import authSlice from "../../05-features/AuthModal/provider/authSlice";
+
 export const store = configureStore({
     reducer: {
         sidebar,
@@ -19,5 +21,6 @@ export const store = configureStore({
         productView,
         productDetails,
         headerSlice,
+        authSlice,
     },
 });
