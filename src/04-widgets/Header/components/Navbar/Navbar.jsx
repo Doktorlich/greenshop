@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "./Navbar.module.scss";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+
 const NAV_LIST = [
     { urlFragment: "/home", title: "Home" },
     { urlFragment: "/shop", title: "Shop" },
@@ -9,13 +10,14 @@ const NAV_LIST = [
 ];
 const Navbar = () => {
     let location = useLocation();
-    console.log(location.pathname.includes("shop"));
+
     return (
         <nav className={styled["nav"]}>
             <ul className={styled["nav__menu-list"]}>
                 {NAV_LIST.map((item, index) => {
                     return (
-                        <li key={index} className={[styled["nav__menu-item"], location.pathname.includes(item.urlFragment) ? styled["nav__menu-item--active"] : ""].join(" ")}>
+                        <li key={index}
+                            className={[styled["nav__menu-item"], location.pathname.includes(item.urlFragment) ? styled["nav__menu-item--active"] : ""].join(" ")}>
                             <NavLink to={item.urlFragment} className={styled["nav__menu-link"]}>
                                 {item.title}
                             </NavLink>

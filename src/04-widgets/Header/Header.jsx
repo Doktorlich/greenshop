@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styled from "./Header.module.scss";
 
@@ -65,7 +65,9 @@ const Header = () => {
                         <p className={[styled["auth-btns__text"], modalTab ? "" : styled["auth-btns__text--active"]].join(" ")}>Register</p>
                     </Button>
                 </div>
-                <div className={styled["forms"]}>{modalTab ? <AuthModal /> : <RegisterModal />}</div>
+                <div className={styled["forms"]}>
+                    {modalTab ? <AuthModal /> : <RegisterModal />}
+                </div>
                 <div className={styled["auth-other"]}>
                     <p className={styled["auth-other__text"]}>Or login with</p>
                     <Button classNameProp={styled["auth-other__btn"]}>

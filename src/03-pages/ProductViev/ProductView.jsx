@@ -8,12 +8,14 @@ import { fetchProductDataFunc } from "./api/fetchProductData";
 import { fetchProductData } from "../../07-shared/api/store/apiSlice";
 import ProductDetails from "../../04-widgets/ProductDetails/ProductDetails";
 import Breadcrumbs from "./../../05-features/Breadcrumbs/Breadcrumbs";
+
 const ProductView = () => {
     const { status } = useSelector((state) => state.apiProduct);
     useEffect(() => {
         dispatch(fetchProductData());
         fetchProductDataFunc(dispatch, setValueData, axios, id);
-        return () => {};
+        return () => {
+        };
     }, []);
     const dispatch = useDispatch();
     const { id } = useParams();

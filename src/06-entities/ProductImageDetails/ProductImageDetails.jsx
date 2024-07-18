@@ -4,11 +4,12 @@ import styled from "./ProductImageDetails.module.scss";
 import SearchIcon from "../../07-shared/UI/Icon/SearchIcon/SearchIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { setImageDetailsProductId } from "../../04-widgets/ProductDetails/provider/productDetails";
+
 const ProductImageDetails = ({ valueData }) => {
-    // const [imageDetailsProductId, setImageDetailsProductId] = useState(0);
+
     const { imageDetailsProductId } = useSelector((state) => state.productDetails);
     const dispatch = useDispatch();
-    if (valueData < 0) {
+    if (valueData.length <= 0) {
         return;
     }
     return (
@@ -32,7 +33,8 @@ const ProductImageDetails = ({ valueData }) => {
                 <div className={styled["section-details__wrapper-icon-search"]}>
                     <SearchIcon className={styled["icon-search"]} />
                 </div>
-                <img className={styled["section-details__image-element"]} src={valueData.imageList[imageDetailsProductId]} alt="" />
+                <img className={styled["section-details__image-element"]}
+                     src={valueData.imageList[imageDetailsProductId]} alt="" />
             </div>
         </div>
     );

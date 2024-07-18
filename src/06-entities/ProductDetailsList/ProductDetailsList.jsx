@@ -5,8 +5,11 @@ import { iconSocialMedia } from "./data/iconSocialMedia.js";
 import { Link } from "react-router-dom";
 
 const ProductDetailsList = ({ valueData, children }) => {
-    const tags = valueData.tags.join(", ");
 
+    if (valueData.length <= 0) {
+        return;
+    }
+    const tags = valueData.tags.join(", ");
     return (
         <div className={styled["section-details__parameters"]}>
             <h3 className={styled["section-details__title"]}>{valueData.title}</h3>
