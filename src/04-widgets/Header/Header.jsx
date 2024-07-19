@@ -30,11 +30,9 @@ const Header = () => {
                     <Link to={"/home"}>
                         <Logo className={styled.logo} />
                     </Link>
-
                     <Navbar />
                     <div className={styled["header__right-menu"]}>
                         <SearchIcon className={styled.icon} />
-
                         <div className={styled["icon-wrapper"]}>
                             <Link to={"/shop/cart"}>
                                 <CartIcon className={[styled.icon, styled["icon__cart"]].join(" ")} />
@@ -54,7 +52,6 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-
             <Modal activeModal={activeModal} setActiveModal={setActiveModal} cNContent={styled["modal-header"]}>
                 <div className="auth-btns">
                     <Button classNameProp={styled["auth-btns__item"]} onClick={() => dispatch(setModalTab(true))}>
@@ -79,7 +76,6 @@ const Header = () => {
                         Login with Facebook
                     </Button>
                 </div>
-
                 {/* Reg onClick */}
             </Modal>
         </>

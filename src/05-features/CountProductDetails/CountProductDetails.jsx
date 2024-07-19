@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSizeParamsId } from "../../04-widgets/ProductDetails/provider/productDetails";
 import Button from "../../07-shared/UI/Button/Button";
 import HeartIcon from "../../07-shared/UI/Icon/HeartIcon/HeartIcon";
-
+//TODO-2 Переделать кнопку "Понравится" в чекбокс
 const CountProductDetails = ({ valueData, classNameTransfer }) => {
     const { sizeParamsId } = useSelector((state) => state.productDetails);
     const testHandler = (index) => {
@@ -21,7 +21,7 @@ const CountProductDetails = ({ valueData, classNameTransfer }) => {
                     return (
                         <li
                             key={index}
-                            className={[styled["count-product-details__item"], +sizeParamsId == +index ? styled["count-product-details__item--active"] : ""].join(" ")}
+                            className={[styled["count-product-details__item"], +sizeParamsId === +index ? styled["count-product-details__item--active"] : ""].join(" ")}
                             onClick={() => {
                                 testHandler(index);
                             }}

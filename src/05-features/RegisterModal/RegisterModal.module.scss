@@ -1,69 +1,85 @@
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin-top: 53px;
-    row-gap: 14px;
-    &__desc {
-        align-self: baseline;
-        font-size: 13px;
-        line-height: 16px;
-    }
-    &__input {
-        border: 1px solid var(--color-gray-easy-light);
-        outline: none;
-        width: 300px;
-        height: 40px;
-        border-radius: 5px;
-        padding: 12px 40px 12px 14px;
+  margin-top: 53px;
+  row-gap: 14px;
 
-        font-size: 16px;
-        line-height: 16px;
-        &:focus {
-            border: 1px solid var(--color-green);
-        }
-        &::placeholder {
-            padding: 12px, 14px;
-            font-size: 14px;
-            line-height: 16px;
-            color: var(--color-gray-medium);
-        }
-    }
-    &__btn-forgot {
-        background-color: transparent;
-        border: none;
-        color: var(--color-green);
+  &__desc {
+	align-self: baseline;
+	font-size: 13px;
+	line-height: 16px;
+  }
 
-        align-self: flex-end;
-        &:hover {
-            color: var(--color-green-opc50);
-        }
-    }
-    &__button {
-        width: 300px;
-        height: 45px;
-    }
+  &__input {
+	border: 1px solid var(--color-gray-easy-light);
+	outline: none;
+	width: 300px;
+	height: 40px;
+	border-radius: 5px;
+	padding: 12px 40px 12px 14px;
+
+	font-size: 16px;
+	line-height: 16px;
+
+	&:focus {
+	  border: 1px solid var(--color-green);
+	}
+
+	&::placeholder {
+	  padding: 12px, 14px;
+	  font-size: 14px;
+	  line-height: 16px;
+	  color: var(--color-gray-medium);
+	}
+  }
+
+  &__btn-forgot {
+	background-color: transparent;
+	border: none;
+	color: var(--color-green);
+
+	align-self: flex-end;
+
+	&:hover {
+	  color: var(--color-green-opc50);
+	}
+  }
+
+  &__button {
+	width: 300px;
+	height: 45px;
+  }
 }
+
 .input-wrapper {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
+
 .icon-hide-pass {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
 }
+
 .icon-hide-pass--active {
-    opacity: 0.2;
+  opacity: 0.2;
 }
+
 input[type="password"] {
-    letter-spacing: 2px;
-    &::placeholder {
-        letter-spacing: 0px;
-    }
+  letter-spacing: 2px;
+
+  &::placeholder {
+	letter-spacing: 0px;
+  }
 }
 
 .form__input {
+}
+
+.form__input--error {
+  border: 1px solid red;
 }
