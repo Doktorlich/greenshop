@@ -1,15 +1,32 @@
 .input[type="button"],
 .input[type="submit"] {
-    font-family: var(--font-family-bold);
+  position: relative;
+  font-family: var(--font-family-bold), serif;
 
-    border: none;
-    border-radius: 6px;
-    color: var(--color-light);
-    background-color: var(--color-green);
-    border: 1px solid transparent;
-    &:active {
-        background-color: var(--color-light);
-        color: var(--color-green);
-        border: 1px solid var(--color-green);
-    }
+  border-radius: 6px;
+  color: var(--color-light);
+  background-color: var(--color-green);
+  border: 1px solid transparent;
+
+  &:active {
+	background-color: var(--color-light);
+	color: var(--color-green);
+	border: 1px solid var(--color-green);
+  }
+}
+
+.wrapper-input {
+  position: relative;
+}
+
+.symbol-required-field {
+  pointer-events: none;
+
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  color: red;
+  font-family: var(--font-family-bold), serif;
+  font-size: 25px;
+
 }

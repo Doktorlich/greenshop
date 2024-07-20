@@ -83,3 +83,9 @@ input[type="password"] {
 .form__input--error {
   border: 1px solid red;
 }
+
+.form__message--error {
+  color: red;
+  width: 300px;
+
+}

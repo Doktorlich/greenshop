@@ -13,31 +13,42 @@ import { useInput } from "../../07-shared/lib/useInput";
 
 const AuthModal = () => {
     const { showPass } = useSelector(state => state.headerSlice);
-    const email = useInput("", { isEmpty: true, minLength: 5, isMail: true });
-    const password = useInput("", { isEmpty: true, minLength: 5 });
+    const email = useInput("", { isEmpty: true, minLength: 5, maxLength: 50, isMail: true });
+    const password = useInput("", { isEmpty: true, minLength: 8, maxLength: 50 });
     const dispatch = useDispatch();
     const emailCheck = email.isEmpty || email.emailError ? styled["email-error"] : styled["email-true"];
+
     const passwordCheck = password.isEmpty ? styled["email-error"] : styled["email-true"];
-   
+
     return (
         <Form className={styled["form"]}>
             <p className={styled["form__desc"]}>Enter your username and password to login.</p>
+            {email.isDirty && (email.isEmpty || email.emailError) ?
+                <p className={styled["form__message--error"]}>Please provide a valid email address.</p> : ""}
             <Input
                 type="mail"
                 placeholder="almamun_uxui@outlook.com"
                 className={[styled["form__input"], email.isDirty && emailCheck].join(" ")}
-                value={email.value}
+                value={email.value.trim()}
                 onChange={e => email.onChange(e)}
                 onBlur={e => email.onBlur(e)}
+                onFocus={(e) => email.onFocus(e)}
             />
+            {password.isDirty &&
+            password.isEmpty &&
+            password.minLengthError ||
+            password.maxLengthError ?
+                <p className={styled["form__message--error"]}>The password must contain from 8 to 50
+                    characters.</p> : ""}
             <div className={styled["input-wrapper"]}>
                 <Input
                     type={!showPass ? "password" : "text"}
                     placeholder="password"
                     className={[styled["form__input"], styled["form__input-pass"], password.isDirty && passwordCheck].join(" ")}
-                    value={password.value}
+                    value={password.value.trim()}
                     onChange={e => password.onChange(e)}
                     onBlur={e => password.onBlur(e)}
+                    onFocus={() => password.onFocus()}
                 />
                 <img
                     src={`${showPassIcon}`}
