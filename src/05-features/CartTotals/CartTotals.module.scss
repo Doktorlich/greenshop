@@ -1,0 +1,148 @@
+.cart-total {
+  display: flex;
+  flex-direction: column;
+  width: 328px;
+
+  &__title {
+	font-family: var(--font-family-bold), serif;
+	font-size: 18px;
+	line-height: 16px;
+	color: var(--color-dark);
+	padding-bottom: 12px;
+	border-bottom: 1px solid var(--color-green-opc50);
+  }
+
+  &__coupon-block {
+	display: flex;
+	flex-direction: column;
+
+  }
+
+  &__title-coupon {
+	line-height: 16px;
+	font-size: 14px;
+	margin-bottom: 8px;
+	margin-top: 11px;
+  }
+
+  &__coupon-input-list {
+	display: flex;
+	width: 332px;
+
+  }
+
+  &__input-test {
+	width: 230px;
+	height: 40px;
+	border: 1px solid var(--color-green);
+	border-right: none;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	padding-left: 9px;
+	padding-right: 9px;
+
+	&:focus {
+	  outline: none;
+	}
+
+	&::placeholder {
+	  font-size: 14px;
+	  line-height: 15px;
+	}
+  }
+
+  &__input-submit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 102px;
+	height: 40px;
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+  }
+
+  &__list {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	row-gap: 17px;
+	padding-top: 30px;
+	padding-bottom: 8px;
+
+
+  }
+
+  &__item {
+	display: flex;
+	justify-content: space-between;
+
+  }
+
+  &__name {
+	font-size: 15px;
+	line-height: 16px;
+	color: var(--color-dark);
+  }
+
+  &__sum {
+	font-family: var(--font-family-medium), serif;
+	font-size: 15px;
+	line-height: 16px;
+	color: var(--color-dark);
+  }
+
+  &__view-shipping {
+	color: var(--color-green);
+	background-color: transparent;
+	font-size: 12px;
+	line-height: 16px;
+	align-self: end;
+	margin-bottom: 26px;
+  }
+
+  &__total {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 29px;
+
+	&-name {
+	  font-family: var(--font-family-bold), serif;
+	  font-size: 16px;
+	  line-height: 16px;
+	  color: var(--color-dark);
+	}
+
+	&-sum {
+	  font-family: var(--font-family-bold), serif;
+	  font-size: 18px;
+	  line-height: 16px;
+	  color: var(--color-green);
+	}
+  }
+
+  &__btn-checkout {
+	width: 328px;
+	height: 40px;
+	margin-bottom: 14px;
+	border: 1px solid var(--color-green);
+	border-radius: 3px !important;
+
+	font-family: var(--font-family-bold), serif;
+	font-size: 15px;
+	line-height: 16px;
+	padding: 0;
+
+	&:active {
+	  color: var(--color-green);
+	  background-color: var(--color-light);
+	}
+  }
+
+  &__btn-continue {
+	background-color: transparent;
+	color: var(--color-green);
+
+	font-size: 15px;
+	line-height: 16px;
+  }
+}

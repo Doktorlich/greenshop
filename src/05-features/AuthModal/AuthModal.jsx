@@ -23,8 +23,7 @@ const AuthModal = () => {
     return (
         <Form className={styled["form"]}>
             <p className={styled["form__desc"]}>Enter your username and password to login.</p>
-            {email.isDirty && (email.isEmpty || email.emailError) ?
-                <p className={styled["form__message--error"]}>Please provide a valid email address.</p> : ""}
+            {email.isDirty && (email.isEmpty || email.emailError) ? <p className={styled["form__message--error"]}>Please provide a valid email address.</p> : ""}
             <Input
                 type="mail"
                 placeholder="almamun_uxui@outlook.com"
@@ -32,14 +31,13 @@ const AuthModal = () => {
                 value={email.value.trim()}
                 onChange={e => email.onChange(e)}
                 onBlur={e => email.onBlur(e)}
-                onFocus={(e) => email.onFocus(e)}
+                onFocus={e => email.onFocus(e)}
             />
-            {password.isDirty &&
-            password.isEmpty &&
-            password.minLengthError ||
-            password.maxLengthError ?
-                <p className={styled["form__message--error"]}>The password must contain from 8 to 50
-                    characters.</p> : ""}
+            {(password.isDirty && password.isEmpty && password.minLengthError) || password.maxLengthError ? (
+                <p className={styled["form__message--error"]}>The password must contain from 8 to 50 characters.</p>
+            ) : (
+                ""
+            )}
             <div className={styled["input-wrapper"]}>
                 <Input
                     type={!showPass ? "password" : "text"}
