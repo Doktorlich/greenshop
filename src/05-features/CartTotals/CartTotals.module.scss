@@ -8,6 +8,7 @@
 	font-size: 18px;
 	line-height: 16px;
 	color: var(--color-dark);
+	padding-top: 9px;
 	padding-bottom: 12px;
 	border-bottom: 1px solid var(--color-green-opc50);
   }
@@ -98,6 +99,7 @@
 	line-height: 16px;
 	align-self: end;
 	margin-bottom: 26px;
+	padding: 0;
   }
 
   &__total {
@@ -121,16 +123,22 @@
   }
 
   &__btn-checkout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 328px;
 	height: 40px;
 	margin-bottom: 14px;
 	border: 1px solid var(--color-green);
 	border-radius: 3px !important;
+	background-color: var(--color-green);
+	padding: 0;
 
 	font-family: var(--font-family-bold), serif;
 	font-size: 15px;
 	line-height: 16px;
-	padding: 0;
+	color: var(--color-light);
+
 
 	&:active {
 	  color: var(--color-green);
@@ -139,6 +147,9 @@
   }
 
   &__btn-continue {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: transparent;
 	color: var(--color-green);
 

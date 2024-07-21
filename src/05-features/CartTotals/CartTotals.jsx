@@ -4,6 +4,7 @@ import Input from "../../07-shared/UI/elementsForm/Input/Input.jsx";
 import { useInput } from "../../07-shared/lib/useInput.js";
 import Form from "../../07-shared/UI/elementsForm/Form/Form.jsx";
 import Button from "../../07-shared/UI/Button/Button.jsx";
+import { Link } from "react-router-dom";
 
 const CartTotals = () => {
     const coupon = useInput("");
@@ -45,8 +46,8 @@ const CartTotals = () => {
                 <p className={styled["cart-total__total-name"]}>Total</p>
                 <p className={styled["cart-total__total-sum"]}>${"2,699.00"}</p>
             </div>
-            <Button classNameProp={styled["cart-total__btn-checkout"]}>Proceed To Checkout</Button>
-            <Button classNameProp={styled["cart-total__btn-continue"]}>Continue Shopping</Button>
+            <Link to={"/product-checkout"} className={styled["cart-total__btn-checkout"]}>Proceed To Checkout</Link>
+            <Link to={"/home"} className={styled["cart-total__btn-continue"]}>Continue Shopping</Link>
         </div>
     );
 };

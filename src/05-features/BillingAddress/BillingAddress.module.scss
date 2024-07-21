@@ -1,0 +1,43 @@
+.billing-address__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 22px;
+  row-gap: 30px;
+  text-decoration: none;
+  width: 722px;
+}
+
+.billing-address__item {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: end;
+  width: 350px;
+}
+
+.billing-address__label {
+  position: relative;
+
+  font-size: 15px;
+  line-height: 15px;
+  color: var(--color-dark);
+  padding-bottom: 10px;
+
+  & span {
+
+	color: red;
+	font-size: 22px;
+	line-height: 15px;
+  }
+
+}
+
+.billing-address__input, .billing-address__select {
+  padding-left: 13px;
+  padding-right: 13px;
+  width: 350px;
+  height: 40px;
+  outline: none;
+  border: 1px solid var(--color-gray-easy-light);
+}
