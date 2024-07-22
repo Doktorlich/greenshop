@@ -5,9 +5,9 @@ import ProductCheckoutForm from "../../04-widgets/ProductCheckoutForm/ProductChe
 const ProductCheckout = () => {
     return (
         <div>
-            <Breadcrumbs nameLocation={"Shop / ProductCheckoutForm"} />
+            <Breadcrumbs nameLocation={"Shop / Checkout"} />
             <ProductCheckoutForm />
-       
+
         </div>
     );
 };

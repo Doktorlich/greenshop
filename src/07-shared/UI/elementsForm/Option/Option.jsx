@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Option = ({ children, value, className, disabled, defaultValue, hidden }) => {
+const Option = ({ children, value, className, disabled, selected, hidden }) => {
     return (
-        <option value={value} className={className} disabled={disabled} defaultValue={defaultValue}
+        <option value={value} className={className} disabled={disabled} selected={selected}
                 hidden={hidden}>
             {children}
         </option>
@@ -15,7 +15,7 @@ Option.propTypes = {
     value: PropTypes.string,
     className: PropTypes.string,
     disabled: PropTypes.bool,
-    defaultValue: PropTypes.bool,
+    selected: PropTypes.bool,
     hidden: PropTypes.bool,
 };
 

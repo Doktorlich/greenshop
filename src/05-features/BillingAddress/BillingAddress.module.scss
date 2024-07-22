@@ -1,3 +1,14 @@
+.billing-address__title {
+  margin-top: 36px;
+  margin-bottom: 21px;
+
+  font-family: var(--font-family-bold), serif;
+  font-size: 17px;
+  line-height: 16px;
+  color: var(--color-dark);
+
+}
+
 .billing-address__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -6,6 +17,7 @@
   row-gap: 30px;
   text-decoration: none;
   width: 722px;
+  margin-bottom: 54px;
 }
 
 .billing-address__item {
@@ -36,8 +48,71 @@
 .billing-address__input, .billing-address__select {
   padding-left: 13px;
   padding-right: 13px;
+  border-radius: 3px;
   width: 350px;
   height: 40px;
   outline: none;
   border: 1px solid var(--color-gray-easy-light);
+}
+
+.billing-address__select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.billing-address__input::placeholder, .billing-address__placeholder {
+  font-size: 14px;
+  line-height: 15px;
+  color: var(--color-gray-a5);
+}
+
+.billing-address__fields-phone {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.billing-address__select-field-left {
+
+  width: 80px;
+
+
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  position: absolute;
+  content: '▼'; /* Unicode for down arrow */
+  font-size: 16px; /* Adjust this value to control the arrow size */
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+}
+
+.billing-address__input--field-right {
+  width: 255px;
+}
+
+.billing-address__textarea-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.billing-address__input-textarea {
+  padding: 13px;
+
+  width: 350px;
+  height: 152px;
+  resize: none;
+
+  &:focus {
+	outline: none;
+  }
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "./Textarea.module.scss";
 
-const Textarea = (id, name, rows, cols, children, className, onChange, value) => {
+const Textarea = ({ id, name, rows, cols, className, onChange, value }) => {
     return (
-        <textarea id={id} name={name} rows={rows} cols={cols} className={className} value={value} onChange={onChange} />
+        <textarea id={id} name={name} rows={rows} cols={cols} className={[styled[""], className].join(" ")}
+                  value={value} onChange={onChange} />
 
 
     );
