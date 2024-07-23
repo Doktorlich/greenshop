@@ -17,28 +17,36 @@ const Input = forwardRef(function Input({
                                             onBlur,
                                             onFocus,
                                             requiredField,
+                                            required,
+                                            name,
+                                            checked,
                                         }, ref) {
+
+    // <div className={styled["wrapper-input"]}>
+    //     {/*    {requiredField ? <span className={styled["symbol-required-field"]}>*</span> : ""}*/}
+    //     {/*</div>*/}
     return (
-        <div className={styled["wrapper-input"]}>
-            <input
-                ref={ref}
-                id={id}
-                value={value}
-                type={type}
-                className={`${styled.input} ${className}`}
-                min={min}
-                max={max}
-                step={step}
-                placeholder={placeholder}
-                onChange={onChange}
-                onClick={onClick}
-                onBlur={onBlur}
-                onFocus={onFocus}
-            >
-                {children}
-            </input>
-            {requiredField ? <span className={styled["symbol-required-field"]}>*</span> : ""}
-        </div>
+
+        <input
+            ref={ref}
+            id={id}
+            value={value}
+            type={type}
+            className={`${styled.input} ${className}`}
+            min={min}
+            max={max}
+            step={step}
+            placeholder={placeholder}
+            onChange={onChange}
+            onClick={onClick}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            required={required}
+            name={name}
+            checked={checked}
+        />
+
+
     );
 });
 
@@ -51,7 +59,11 @@ Input.propTypes = {
     type: PropTypes.string,
     className: PropTypes.string,
     placeholder: PropTypes.string,
+    name: PropTypes.string,
+
     requiredField: PropTypes.bool,
+    required: PropTypes.bool,
+    checked: PropTypes.bool,
 
     onChange: PropTypes.func,
     onClick: PropTypes.func,

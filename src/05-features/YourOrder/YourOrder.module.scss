@@ -1,0 +1,166 @@
+@import "../../01-app/styles/global.scss";
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.cart-table {
+
+  width: 405px;
+  border-spacing: 0 10px;
+
+  margin-bottom: 17px;
+
+  &__head {
+
+  }
+
+  &__head-row {
+
+  }
+
+  &__head-cell {
+	border-bottom: 1px solid var(--color-green-opc50);
+	padding-bottom: 11px;
+	text-align: left;
+  }
+
+  &__body {
+  }
+
+
+}
+
+.billing-address__title {
+  margin-top: 36px;
+  margin-bottom: 12px;
+  align-self: baseline;
+  font-family: var(--font-family-bold), serif;
+  font-size: 17px;
+  line-height: 16px;
+  color: var(--color-dark);
+
+}
+
+.order__menu {
+
+
+}
+
+.order__list {
+  text-decoration: none;
+
+}
+
+.order__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order__text {
+}
+
+.order__price {
+  font-family: var(--font-family-medium), serif;
+  font-size: 18px;
+  line-height: 16px;
+
+}
+
+.order__item-total {
+  border-top: 1px solid var(--color-green-opc50);
+  margin-top: 17px;
+  padding-top: 17px;
+
+  font-family: var(--font-family-bold), serif;
+  font-size: 16px;
+  line-height: 16px;
+
+  & .order__price {
+	color: var(--color-green);
+  }
+}
+
+.order__item-btn {
+
+}
+
+.order__btn-shipping {
+  background-color: transparent;
+  color: var(--color-green);
+  margin-left: auto;
+  padding: 0;
+}
+
+.order__payment-menu {
+}
+
+.order__payment-list {
+  text-decoration: none;
+}
+
+.order__payment-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 11px;
+  column-gap: 10px;
+  border: 1px solid var(--color-gray-ea);
+  border-radius: 3px;
+  width: 321px;
+  height: 45px;
+  cursor: pointer;
+
+}
+.order__payment-menu {
+  width: 321px;
+}
+.order__payment-radio {
+  background-color: #46a358;
+  cursor: pointer;
+  user-select: none;
+
+
+}
+.radio-span {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-green);
+  border-radius: 50%;
+  pointer-events: all;
+}
+.radio-span::before {
+  position: absolute;
+  display: none;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-green);
+  border-radius: 50%;
+  @include abs-center;
+
+}
+
+.order__payment-label-radio {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 321px;
+  height: 45px;
+  cursor: pointer;
+}
+input[type="radio"] {
+  display: none;
+}
+
+.order__payment-radio + .radio-span::before {
+  display: none;
+  pointer-events: none;
+}
+
+input[type="radio"]:checked + .radio-span::before {
+  display: block;
+}

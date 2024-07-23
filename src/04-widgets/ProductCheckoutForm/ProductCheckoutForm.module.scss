@@ -1,3 +1,6 @@
 .product-checkout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 76px;
   margin-bottom: 210px;
 }

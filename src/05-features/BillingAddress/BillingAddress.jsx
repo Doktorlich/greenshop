@@ -24,7 +24,7 @@ const BillingAddress = () => {
     const textarea = useInput("");
 
     return (
-        <React.Fragment>
+        <div>
             <h2 className={styled["billing-address__title"]}>Billing Address</h2>
             <Form>
                 <ul className={styled["billing-address__list"]}>
@@ -32,6 +32,7 @@ const BillingAddress = () => {
                         <Label className={styled["billing-address__label"]}>First Name <span>*</span></Label>
                         <Input className={styled["billing-address__input"]}
                                type={"text"}
+                               required={true}
                                {...firstName}
                         />
                     </li>
@@ -63,9 +64,7 @@ const BillingAddress = () => {
                                 })}
                             </Select>
                         </div>
-
                     </li>
-
                     <li className={styled["billing-address__item"]}>
                         <Label className={styled["billing-address__label"]}>Town / City <span>*</span></Label>
                         <Input className={styled["billing-address__input"]}
@@ -122,8 +121,6 @@ const BillingAddress = () => {
                                     <Option className={styled["billing-address__option"]}>+852</Option>
                                 </Select>
                             </div>
-
-
                             <Input
                                 className={[styled["billing-address__input"], styled["billing-address__input--field-right"]].join(" ")}
                                 type={"number"}
@@ -140,9 +137,8 @@ const BillingAddress = () => {
                               onChange={e => textarea.onChange(e)}
                     />
                 </div>
-
             </Form>
-        </React.Fragment>
+        </div>
     );
 };
 BillingAddress.propTypes = {};
