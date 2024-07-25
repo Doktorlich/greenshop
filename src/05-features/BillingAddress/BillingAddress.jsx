@@ -22,7 +22,7 @@ const BillingAddress = () => {
     const phone = useInput("");
     const selectPhone = useInput("");
     const textarea = useInput("");
-
+    // TODO доделать валидацию формы
     return (
         <div>
             <h2 className={styled["billing-address__title"]}>Billing Address</h2>

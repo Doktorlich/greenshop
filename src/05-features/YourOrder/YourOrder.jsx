@@ -5,11 +5,13 @@ import Button from "../../07-shared/UI/Button/Button.jsx";
 import Input from "../../07-shared/UI/elementsForm/Input/Input.jsx";
 import Label from "../../07-shared/UI/elementsForm/Label/Label.jsx";
 import creditCards from "../../07-shared/assets/images/jpg/credit-cards.jpeg";
+import Form from "../../07-shared/UI/elementsForm/Form/Form.jsx";
 
 const YourOrder = ({ ...productData }) => {
+    // TODO доделать валидацию формы
     return (
 
-        <div className={styled["order"]}>
+        <Form className={styled["order"]}>
             <h2 className={styled["billing-address__title"]}>Your Order</h2>
             <table className={styled["cart-table"]}>
                 <thead className={styled["cart-table__head"]}>
@@ -52,38 +54,45 @@ const YourOrder = ({ ...productData }) => {
                     <h2 className={styled["billing-address__title"]}>Payment Method</h2>
                     <ul className={styled["order__payment-list"]}>
                         <li className={styled["order__payment-item"]}>
-                            <Input className={styled["order__payment-radio"]}
-                                   id={"order__payment-label-id-1"}
-                                   type="radio"
-                                   name="order__payment-radio" />
-                            <span className={styled["radio-span"]}></span>
+
                             <Label className={styled["order__payment-label-radio"]} htmlFor="order__payment-label-id-1">
+                                <Input className={styled["order__payment-radio"]}
+                                       id={"order__payment-label-id-1"}
+                                       type="radio"
+                                       name="order__payment-radio" />
+                                <span className={styled["radio-span"]}></span>
                                 <img
                                     src={creditCards}
-                                    alt="" /></Label>
+                                    alt="" />
+                            </Label>
                         </li>
                         <li className={styled["order__payment-item"]}>
-                            <Input className={styled["order__payment-radio"]}
-                                   id={"order__payment-label-id-2"}
-                                   type="radio"
-                                   name="order__payment-radio" />
-                            <span className={styled["radio-span"]}></span>
+
                             <Label className={styled["order__payment-label-radio"]} htmlFor="order__payment-label-id-2">
-                                Direct bank transfer</Label>
+                                <Input className={styled["order__payment-radio"]}
+                                       id={"order__payment-label-id-2"}
+                                       type="radio"
+                                       name="order__payment-radio" />
+                                <span className={styled["radio-span"]}></span>
+                                Direct bank transfer
+                            </Label>
                         </li>
                         <li className={styled["order__payment-item"]}>
-                            <Input className={styled["order__payment-radio"]}
-                                   id={"order__payment-label-id-3"}
-                                   type="radio"
-                                   name="order__payment-radio" />
-                            <span className={styled["radio-span"]}></span>
+
                             <Label className={styled["order__payment-label-radio"]} htmlFor="order__payment-label-id-3">
-                                Cash on delivery</Label>
+                                <Input className={styled["order__payment-radio"]}
+                                       id={"order__payment-label-id-3"}
+                                       type="radio"
+                                       name="order__payment-radio" />
+                                <span className={styled["radio-span"]}></span>
+                                Cash on delivery
+                            </Label>
                         </li>
                     </ul>
                 </div>
+                <Input type="submit" value={"Place Order"} className={styled["order__submit"]} />
             </div>
-        </div>
+        </Form>
     );
 };
 

@@ -127,10 +127,12 @@
   position: relative;
   display: inline-block;
   width: 16px;
-  height: 16px;
+  height: 15px;
   border: 1px solid var(--color-green);
   border-radius: 50%;
-  pointer-events: all;
+  pointer-events: none;
+  margin-right: 30px;
+
 }
 .radio-span::before {
   position: absolute;
@@ -141,6 +143,8 @@
   background-color: var(--color-green);
   border-radius: 50%;
   @include abs-center;
+  pointer-events: none;
+
 
 }
 
@@ -151,6 +155,8 @@
   width: 321px;
   height: 45px;
   cursor: pointer;
+
+
 }
 input[type="radio"] {
   display: none;
@@ -163,4 +169,20 @@ input[type="radio"] {
 
 input[type="radio"]:checked + .radio-span::before {
   display: block;
+  pointer-events: none;
+}
+.order__submit {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 321px;
+  height: 40px;
+  border-radius: 3px;
+  color: var(--color-light);
+  background-color: var(--color-green);
+
+  font-family: var(--font-family-bold), serif;
+  font-size: 15px;
+  line-height: 16px;
 }

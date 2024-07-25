@@ -8,7 +8,7 @@ import { fetchProductData } from "../../07-shared/api/store/apiSlice.js";
 const ProductCheckoutForm = () => {
     const { productData, status } = useSelector((state) => state.apiProduct);
     const dispatch = useDispatch();
-
+    // TODO: исправить отображение подсветки SHOP когда активна данная страница
 
     useEffect(() => {
         dispatch(fetchProductData());
