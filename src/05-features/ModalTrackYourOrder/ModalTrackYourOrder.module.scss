@@ -1,0 +1,138 @@
+
+.track-order {
+  border-bottom: 10px solid var(--color-green);
+
+  &__top {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 578px;
+	padding-block: 29px 15px;
+	row-gap: 16px;
+	background-color: var(--color-green-opc10);
+  }
+
+  &__envelope-img {
+	color: var(--color-green);
+  }
+
+  &__desc-top {
+	font-size: 16px;
+	line-height: 16px;
+
+  }
+
+  &__details-list {
+	text-decoration: none;
+	display: flex;
+	column-gap: 45px;
+	justify-content: center;
+	margin-bottom: 18px;
+	padding-block: 15px;
+
+	border-block: 1px solid var(--color-green-opc50);
+  }
+
+  &__details-item {
+	position: relative;
+
+	&:not(&:last-child)::after {
+	  content: "";
+	  position: absolute;
+	  top: 1px;
+	  right: -22.5px;
+	  background-color: var(--color-green-opc10);
+	  width: 1px;
+	  height: 31px;
+	}
+  }
+
+  &__details-title {
+	font-size: 14px;
+	line-height: 16px;
+	color: var(--color-gray-dark);
+  }
+
+  &__details-value {
+	padding-top: 3px;
+	font-family: var(--font-family-bold);
+	font-size: 15px;
+	line-height: 16px;
+	color: var(--color-gray-dark);
+  }
+}
+.cart-table {
+  margin-left: 42px;
+  width: 495px;
+  border-spacing: 0 10px;
+  border-bottom: 1px solid var(--color-green-opc50);
+
+  &__caption {
+	text-align: left;
+	font-family: var(--font-family-bold);
+	font-size: 15px;
+	line-height: 16px;
+  }
+
+  &__head-cell:first-child {
+	text-align: left;
+  }
+
+  &__body-row-bottom {
+  }
+
+  &__body-cell-shipping {
+
+	font-size: 15px;
+	line-height: 16px;
+
+  }
+
+  &__body-cell-total {
+	font-family: var(--font-family-bold);
+	font-size: 16px;
+	line-height: 16px;
+  }
+
+  &__body-cell-value-shipping {
+	font-family: var(--font-family-medium);
+	font-size: 18px;
+	line-height: 16px;
+  }
+
+  &__body-cell-value-total {
+	font-family: var(--font-family-bold);
+	font-size: 18px;
+	line-height: 16px;
+	color: var(--color-green);
+  }
+}
+
+.track-order__description {
+  margin-block: 18px 49px;
+  padding-inline: 48px;
+  text-align: center;
+
+  color: var(--color-gray-dark);
+  font-size: 14px;
+  line-height: 22px;
+}
+.track-order__btn-close-modal {
+  display: block;
+  margin-inline: auto;
+  width: 162px;
+  height: 45px;
+  border-radius: 5px;
+  margin-bottom: 48px;
+  border: 1px solid var(--color-green);
+
+  font-family: var(--font-family-bold);
+  font-size: 18px;
+  line-height: 16px;
+
+  &:active {
+	color: var(--color-green);
+	background-color: var(--color-light);
+  }
+}
