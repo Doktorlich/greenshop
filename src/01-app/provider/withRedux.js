@@ -9,6 +9,8 @@ import productView from "../../03-pages/ProductViev/provider/productViewSlice";
 import productDetails from "../../04-widgets/ProductDetails/provider/productDetails";
 import headerSlice from "../../04-widgets/Header/provider/headerSlice";
 import authSlice from "../../05-features/AuthModal/provider/authSlice";
+import productCheckoutFormSlice from "../../04-widgets/ProductCheckoutForm/provider/productCheckoutFormSlice.js";
+
 
 export const store = configureStore({
     reducer: {
@@ -22,5 +24,6 @@ export const store = configureStore({
         productDetails,
         headerSlice,
         authSlice,
+        productCheckoutFormSlice,
     },
 });

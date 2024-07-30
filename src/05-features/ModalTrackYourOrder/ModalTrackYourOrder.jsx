@@ -5,8 +5,12 @@ import ModalYourOrderTable from "./ModalYourOrderTable/ModalYourOrderTable.jsx";
 import Envelope from "../../07-shared/UI/Icon/Envelope/Envelope.jsx";
 import Button from "../../07-shared/UI/Button/Button.jsx";
 
+import { useDispatch } from "react-redux";
+import { setActiveModal } from "../../04-widgets/ProductCheckoutForm/provider/productCheckoutFormSlice.js";
+
 
 const ModalTrackYourOrder = ({ ...productData }) => {
+    const dispatch = useDispatch();
     return (
         <div className={styled["track-order"]}>
             <div className={styled["track-order__top"]}>
@@ -55,7 +59,9 @@ const ModalTrackYourOrder = ({ ...productData }) => {
                 an order
                 confirmation email shortly with the
                 expected delivery date for your items.</p>
-            <Button classNameProp={styled["track-order__btn-close-modal"]}>Track your order</Button>
+            <Button classNameProp={styled["track-order__btn-close-modal"]}
+                    onClick={() => dispatch(setActiveModal(false))}
+            >Track your order</Button>
         </div>
     );
 };

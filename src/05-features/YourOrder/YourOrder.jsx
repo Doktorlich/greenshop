@@ -6,8 +6,11 @@ import Input from "../../07-shared/UI/elementsForm/Input/Input.jsx";
 import Label from "../../07-shared/UI/elementsForm/Label/Label.jsx";
 import creditCards from "../../07-shared/assets/images/jpg/credit-cards.jpeg";
 import Form from "../../07-shared/UI/elementsForm/Form/Form.jsx";
+import { useDispatch } from "react-redux";
+import { setActiveModal } from "../../04-widgets/ProductCheckoutForm/provider/productCheckoutFormSlice.js";
 
 const YourOrder = ({ ...productData }) => {
+    const dispatch = useDispatch();
     // TODO доделать валидацию формы
     return (
 
@@ -90,7 +93,10 @@ const YourOrder = ({ ...productData }) => {
                         </li>
                     </ul>
                 </div>
-                <Input type="submit" value={"Place Order"} className={styled["order__submit"]} />
+                <Input type="submit" value={"Place Order"} className={styled["order__submit"]} onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(setActiveModal(true));
+                }} />
             </div>
         </Form>
     );

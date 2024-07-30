@@ -10,16 +10,15 @@ const Input = forwardRef(function Input({
                                             min,
                                             max,
                                             step,
-                                            children,
                                             placeholder,
                                             onChange,
                                             onClick,
                                             onBlur,
                                             onFocus,
-                                            requiredField,
                                             required,
                                             name,
                                             checked,
+
                                         }, ref) {
 
     // <div className={styled["wrapper-input"]}>

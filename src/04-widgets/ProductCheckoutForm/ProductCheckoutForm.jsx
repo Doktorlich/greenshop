@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "../../07-shared/api/store/apiSlice.js";
 import Modal from "../../07-shared/UI/Modal/Modal.jsx";
 import ModalTrackYourOrder from "../../05-features/ModalTrackYourOrder/ModalTrackYourOrder.jsx";
-import { setActiveModal } from "../Header/provider/headerSlice.js";
+import { setActiveModal } from "./provider/productCheckoutFormSlice.js";
+
 
 const ProductCheckoutForm = () => {
     const { productData, status } = useSelector((state) => state.apiProduct);
+    const { activeModal } = useSelector((state) => state.productCheckoutFormSlice);
     const dispatch = useDispatch();
     // TODO: исправить отображение подсветки SHOP когда активна данная страница
 
@@ -24,8 +26,8 @@ const ProductCheckoutForm = () => {
         <div className={styled["product-checkout"]}>
             <BillingAddress />
             <YourOrder {...productData[0]} />
-            <Modal activeModal={true} setActiveModal={setActiveModal} cNContent={styled["modal-track-order"]}>
-                <ModalTrackYourOrder {...productData[0]} />
+            <Modal activeModal={activeModal} setActiveModal={setActiveModal} cNContent={styled["modal-track-order"]}>
+                <ModalTrackYourOrder {...productData[0]} activeModal={activeModal} />
             </Modal>
         </div>
     );
