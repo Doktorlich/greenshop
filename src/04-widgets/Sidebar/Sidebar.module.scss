@@ -1,5 +1,9 @@
 .sidebar {
-    width: 100%;
-    max-width: 310px;
-    background-color: var(--color-gray-light);
+  width: 100%;
+  max-width: 310px;
+  background-color: var(--color-gray-light);
+}
+.sidebar__skeleton {
+  width: 350px;
+  height: 1354px
 }

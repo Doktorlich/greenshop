@@ -6,17 +6,32 @@ import { useSelector } from "react-redux";
 import { setRangeScaleFirst, setRangeScaleSecond, setValueId, setValueSize } from "./provider/sidebarSlice";
 import Size from "./components/Size/Size";
 import PreviewSale from "./components/PreviewSale/PreviewSale";
+import Skeleton from "../../07-shared/UI/Skeleton/Skeleton.jsx";
+
 const Sidebar = () => {
-    const { productData } = useSelector((state) => state.apiProduct);
+    const { productData, status } = useSelector((state) => state.apiProduct);
     const { rangeScaleFirst, rangeScaleSecond, valueId, valueSize } = useSelector((state) => state.sidebar);
 
     return (
+
+
         <aside className={styled["sidebar"]}>
-            <Categories valueId={valueId} setValueId={setValueId} productData={productData} />
-            <PriceRange rangeScaleFirst={rangeScaleFirst} rangeScaleSecond={rangeScaleSecond} setRangeScaleFirst={setRangeScaleFirst} setRangeScaleSecond={setRangeScaleSecond} />
-            <Size valueSize={valueSize} setValueSize={setValueSize} />
-            <PreviewSale />
+            {status !== "succeeded" ?
+                <Skeleton>
+                    <div className={styled["sidebar__skeleton"]}>
+
+                    </div>
+                </Skeleton> :
+                <>
+                    <Categories valueId={valueId} setValueId={setValueId} productData={productData} />
+                    <PriceRange rangeScaleFirst={rangeScaleFirst} rangeScaleSecond={rangeScaleSecond}
+                                setRangeScaleFirst={setRangeScaleFirst} setRangeScaleSecond={setRangeScaleSecond} />
+                    <Size valueSize={valueSize} setValueSize={setValueSize} />
+                    <PreviewSale />
+                </>}
         </aside>
+
+
     );
 };
 
