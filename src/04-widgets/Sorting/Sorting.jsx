@@ -12,7 +12,7 @@ const Sorting = () => {
     const { sortValueLeft, sortValueRight, isVisible, sortValueName } = useSelector((state) => state.sorting);
 
     const dispatch = useDispatch();
-    // sortValueNameHandler
+
     return (
         <div className={styled["sorting"]}>
 
@@ -24,7 +24,7 @@ const Sorting = () => {
                     {SORT_NAMES_LEFT.map((name, index) => (
                         <li
                             key={index}
-                            className={[`${styled["sorting__left-elem"]}`, `${+sortValueLeft == +index ? styled["sorting__left-elem--active"] : ""}`].join(" ")}
+                            className={[`${styled["sorting__left-elem"]}`, `${+sortValueLeft === +index ? styled["sorting__left-elem--active"] : ""}`].join(" ")}
                             onClick={() => dispatch(setSortValueLeft(index))}
                         >
                             {name}

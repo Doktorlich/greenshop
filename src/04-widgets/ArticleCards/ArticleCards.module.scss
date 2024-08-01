@@ -1,8 +1,21 @@
 .section-article-card__inner {
 }
 .section-article-card__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 302px;
-    column-gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 302px;
+  column-gap: 28px;
+}
+.skeleton {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  background-color: var(--color-light);
+  margin-bottom: 25px;
+}
+.section-article-card__skeleton {
+
+  width: 586px;
+  height: 250px;
+  background-color: #e0e0e0;
 }
