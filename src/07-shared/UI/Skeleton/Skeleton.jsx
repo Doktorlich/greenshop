@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Skeleton = ({ children, className }) => {
     return (
         <div className={[styled["skeleton"], className].join(" ")}>
-            <div className={styled["skeleton__inner"]}></div>
+            
             {children}
 
         </div>

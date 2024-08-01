@@ -1,47 +1,58 @@
 .sorting {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    width: 838px;
-    height: 22px;
-    margin-bottom: 32px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 838px;
+  height: 22px;
+  margin-bottom: 32px;
 
-    font-size: 15px;
-    line-height: 16px;
-    &__left-elem {
-        cursor: pointer;
-        &--active {
-            position: relative;
-            color: var(--color-green);
-            font-family: var(--font-family-bold);
-            border-bottom: 2px solid;
-        }
-    }
+  font-size: 15px;
+  line-height: 16px;
 
-    &__left-sort {
-        display: flex;
+  &__left-elem {
+	cursor: pointer;
 
-        text-decoration: none;
-        column-gap: 40px;
-    }
-    &__right-sort {
-        display: flex;
-        cursor: pointer;
-    }
-    &__right-name {
-        margin-bottom: 0;
-        margin-right: 8px;
-    }
-    &__right-popup {
-        margin: 0;
-        margin-right: 5px;
-        &:hover {
-            color: var(--color-green);
-        }
-    }
-    &__arrow {
-        width: 16px;
-        height: 16px;
-        margin-top: 2px;
-    }
+	&--active {
+	  position: relative;
+	  color: var(--color-green);
+	  font-family: var(--font-family-bold);
+	  border-bottom: 2px solid;
+	}
+  }
+
+  &__left-sort {
+	display: flex;
+
+	text-decoration: none;
+	column-gap: 40px;
+  }
+
+  &__right-sort {
+	display: flex;
+	cursor: pointer;
+  }
+
+  &__right-name {
+	margin-bottom: 0;
+	margin-right: 8px;
+  }
+
+  &__right-popup {
+	margin: 0;
+	margin-right: 5px;
+
+	&:hover {
+	  color: var(--color-green);
+	}
+  }
+
+  &__arrow {
+	width: 16px;
+	height: 16px;
+	margin-top: 2px;
+  }
+}
+.sorting__skeleton {
+  width: 838px;
+  height: 22px;
 }
