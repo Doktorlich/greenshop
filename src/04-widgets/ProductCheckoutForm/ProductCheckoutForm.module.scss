@@ -7,3 +7,83 @@
 .modal-track-order {
   width: 578px;
 }
+.skeleton {
+  background-color: var(--color-light);
+}
+.skeleton-left {
+  width: 722px;
+
+  &__list {
+	margin-top: 70px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 25px;
+	row-gap: 50px;
+
+	text-decoration: none;
+  }
+
+  &__item {
+	background-color: #e0e0e0;
+	width: 350px;
+	height: 40px;
+
+	&:last-child {
+	  width: 350px;
+	  height: 152px;
+	}
+  ;
+  }
+}
+
+
+.skeleton-right {
+  width: 405px;
+
+  &__product-list {
+	margin-top: 70px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 25px;
+	text-decoration: none;
+  }
+
+  &__product-item {
+	background-color: #e0e0e0;
+	width: 405px;
+	height: 72px;
+  }
+
+  &__price-list {
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 25px;
+	margin-top: 25px;
+	align-items: end;
+	text-decoration: none;
+
+  }
+
+  &__price-item {
+	background-color: #e0e0e0;
+	width: 321px;
+	height: 40px;
+  }
+
+  &__checkbox-list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	margin-top: 75px;
+	align-items: end;
+	text-decoration: none;
+
+  }
+
+  &__checkbox-item {
+	background-color: #e0e0e0;
+	width: 321px;
+	height: 40px;
+  }
+}
