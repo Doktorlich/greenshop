@@ -10,6 +10,7 @@ import { setShowPass } from "../../04-widgets/Header/provider/headerSlice";
 import { useInput } from "../../07-shared/lib/useInput.js";
 
 const RegisterModal = () => {
+    // TODO разобраться в неверной валидации паролей
     const [isPassword, setIsPassword] = useState(true);
     const { showPass } = useSelector((state) => state.headerSlice);
     const firstPassRef = useRef("");

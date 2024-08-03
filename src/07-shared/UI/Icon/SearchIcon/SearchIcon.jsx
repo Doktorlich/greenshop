@@ -1,9 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
+import styled from "./SearchIcon.module.scss";
 
 const SearchIcon = ({ className }) => {
     return (
-        <svg className={className} width="20.000946" height="20.000000" viewBox="0 0 20.0009 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <desc>Created with Pixso.</desc>
+        <svg className={[styled["check"], className].join(" ")} width="20.000946" height="20.000000"
+             viewBox="0 0 20.0009 20"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+
             <defs />
             <path
                 id="Vector"
@@ -15,5 +20,7 @@ const SearchIcon = ({ className }) => {
         </svg>
     );
 };
-
+SearchIcon.propTypes = {
+    className: PropTypes.string,
+};
 export default SearchIcon;

@@ -1,9 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "./HeartIcon.module.scss";
 
 const HeartIcon = ({ className }) => {
+
     return (
-        <svg className={className} width="20.000031" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className={[styled["check"], className].join(" ")} width="20.000031" height="20.000000" viewBox="0 0 20 20"
+             fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <defs>
                 <clipPath id="clip4_209">
                     <rect id="heart 1" width="20.000038" height="20.000000" fill="white" fillOpacity="0" />
@@ -17,6 +20,7 @@ const HeartIcon = ({ className }) => {
                     fill="#3D3D3D"
                     fillOpacity="1.000000"
                     fillRule="nonzero"
+                
                 />
             </g>
         </svg>

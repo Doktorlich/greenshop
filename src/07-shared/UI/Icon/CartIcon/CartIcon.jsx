@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const CartIcon = ({ className }) => {
     return (
-        <svg className={className} width="24.004181" height="24.000000" viewBox="0 0 24.0042 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className={className} width="24.004181" height="24.000000" viewBox="0 0 24.0042 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <desc>Created with Pixso.</desc>
             <defs />
             <path
@@ -15,5 +17,7 @@ const CartIcon = ({ className }) => {
         </svg>
     );
 };
-
+CartIcon.propTypes = {
+    className: PropTypes.string,
+};
 export default CartIcon;

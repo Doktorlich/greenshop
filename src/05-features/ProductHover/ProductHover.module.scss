@@ -1,49 +1,71 @@
 .hover-btns {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    width: 258px;
-    height: 300px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 258px;
+  height: 300px;
 
-    background-color: transparent;
+  background-color: transparent;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    &__list {
-        display: flex;
-        column-gap: 10px;
-        margin-bottom: 7px;
-    }
-    &__item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 35px;
-        height: 35px;
-        border-radius: 4px;
-        background-color: var(--color-light);
-        transform: translateY(60px);
-        transition-duration: 0.2s;
-    }
+  &__list {
+	display: flex;
+	column-gap: 10px;
+	margin-bottom: 7px;
+  }
+
+  &__item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	border-radius: 4px;
+	background-color: var(--color-light);
+	transform: translateY(60px);
+	transition-duration: 0.2s;
+  }
 }
 .hover-btns--hide {
-    overflow: hidden;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    width: 258px;
-    height: 300px;
-    background-color: transparent;
-    border-top: 1px solid var(--color-green);
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 258px;
+  height: 300px;
+  background-color: transparent;
+  border-top: 1px solid var(--color-green);
 
-    .hover-btns__item {
-        transform: translateY(0px);
-        transition-duration: 0.2s;
-        cursor: pointer;
-        &:hover {
-            color: var(--color-green-opc50);
-        }
-    }
+  .hover-btns__item {
+	transform: translateY(0px);
+	transition-duration: 0.2s;
+	cursor: pointer;
+
+
+  }
+}
+.hover-btns__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+}
+.hearth {
+  pointer-events: none;
+  fill: red;
+
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked + .hearth {
+  display: block;
+  pointer-events: none;
+  color: var(--color-green);
+
 }
