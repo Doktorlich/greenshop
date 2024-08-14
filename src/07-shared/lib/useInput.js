@@ -12,12 +12,10 @@ export const useInput = (initialValue, validations) => {
         setValue(e.target.value);
         setIsCheck(e.target.checked);
     };
-    const onClick = (e) => {
-        setValueChecked(e.target.checked);
-        console.log("HOOK", e.target.checked);
-    };
+
     const onChangeCheck = (e) => {
-        setIsCheck(e.target.checked);
+        setValueChecked(e.target.checked);
+
     };
 
     const onBlur = () => {
@@ -26,5 +24,5 @@ export const useInput = (initialValue, validations) => {
     const onFocus = () => {
         setIsDirty(false);
     };
-    return { value, valueChecked, isDirty, isCheck, onChange, onClick, onChangeCheck, onBlur, onFocus, ...valid };
+    return { value, valueChecked, isDirty, isCheck, onChange, onChangeCheck, onBlur, onFocus, ...valid };
 };

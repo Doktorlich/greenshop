@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "./Sorting.module.scss";
-import { SORT_NAMES_LEFT, SORT_NAMES_POPUP } from "./data/data";
+import { SORT_NAMES_LEFT, SORT_NAMES_POPUP, SORT_NAMES_POPUP_SORT_DATA } from "./data/data";
 import Arrow from "../../07-shared/UI/Icon/Arrow/Arrow";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsVisible, setSortValueLeft, setSortValueName, setSortValueRight } from "./provider/sortingSlice";
 import SortPopup from "../../06-entities/SortPopup/SortPopup";
 import Skeleton from "../../07-shared/UI/Skeleton/Skeleton.jsx";
+import { fetchProductData } from "../../07-shared/api/store/apiSlice.js";
 
 const Sorting = () => {
     const { status } = useSelector((state) => state.apiProduct);
@@ -13,6 +14,13 @@ const Sorting = () => {
 
     const dispatch = useDispatch();
 
+    const fetchGreenshop = () => {
+        dispatch(fetchProductData({ SORT_NAMES_POPUP_SORT_DATA, sortValueRight }));
+
+    };
+    useEffect(() => {
+        fetchGreenshop();
+    }, [sortValueRight]);
     return (
         <div className={styled["sorting"]}>
 

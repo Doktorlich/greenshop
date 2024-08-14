@@ -20,9 +20,7 @@ const Slider = () => {
         }, 5000);
         return () => clearInterval(timer);
     }, [slide]);
-    // if (status !== "succeeded") {
-    //     return;
-    // }
+
     const SLIDER_LIST = [
         { id: productData[1]?.id, image: productData[1]?.urlImagePreview },
         { id: productData[2]?.id, image: productData[2]?.urlImagePreview },
@@ -41,7 +39,7 @@ const Slider = () => {
                 <>
                     {SLIDER_LIST.map(({ ...item }, index) => (
                         <SliderBlock key={item.id} {...item}
-                                     className={+slide === +index ? `${styled["slider--active"]}` : ""} />
+                                     className={+slide === +index ? styled["slider--active"] : ""} />
                     ))}
 
                     <div className={styled.breadcrumbs}>

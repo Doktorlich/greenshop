@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Slider = ({ ...slide }) => {
     const { status } = useSelector((state) => state.apiProduct);
-
+// TODO исправить использование кнопки на слайде
     if (status !== "succeeded") {
         return;
     }
@@ -21,13 +21,14 @@ const Slider = ({ ...slide }) => {
                 </h2>
 
                 <p className={styled["slider__description"]}>
-                    We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create an unique Urban Jungle. Order your favorite plants!
+                    We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to
+                    create an unique Urban Jungle. Order your favorite plants!
                 </p>
                 <Button classNameProp={styled["button"]}>SHOP NOW</Button>
             </div>
             <div className={styled["slider__image-container"]}>
-                <img className={styled["slider__image-small"]} src={slide.image} data-id={slide.id} />
-                <img className={styled["slider__image-big"]} src={slide.image} data-id={slide.id} />
+                <img className={styled["slider__image-small"]} src={slide.image} data-id={slide.id} alt={""} />
+                <img className={styled["slider__image-big"]} src={slide.image} data-id={slide.id} alt={""} />
             </div>
         </div>
     );

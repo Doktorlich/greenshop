@@ -20,8 +20,8 @@ const ProductHover = ({ includeValue, valueId, id }) => {
 
                         <Input type={"checkbox"}
                                checked={checkboxCart.valueChecked}
-                               onClick={(e) => {
-                                   checkboxCart.onClick(e);
+                               onChange={(e) => {
+                                   checkboxCart.onChangeCheck(e);
 
                                }}
                         />
@@ -34,8 +34,8 @@ const ProductHover = ({ includeValue, valueId, id }) => {
 
                         <Input type={"checkbox"}
                                checked={checkboxHearth.valueChecked}
-                               onClick={(e) => {
-                                   checkboxHearth.onClick(e);
+                               onChange={(e) => {
+                                   checkboxHearth.onChangeCheck(e);
 
                                }}
                         />

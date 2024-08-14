@@ -7,3 +7,11 @@ export const SORT_NAMES_POPUP = [
     { title: "Rating", sort: "asc" },
     { title: "Rating", sort: "desc" },
 ];
+export const SORT_NAMES_POPUP_SORT_DATA = [
+    { title: "title", sort: "asc" },
+    { title: "title", sort: "desc" },
+    { title: "prise", sort: "asc" },
+    { title: "prise", sort: "desc" },
+    { title: "rating", sort: "asc" },
+    { title: "rating", sort: "desc" },
+];
